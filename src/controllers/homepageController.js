@@ -106,9 +106,13 @@ function callSendAPI(sender_psid, response) {
   });
 }
 
+let getSetupProfilePage = (req, res) => {
+  return res.render("profile.ejs");
+};
 
 module.exports = {
   getHomePage: getHomePage,
   postWebhook: postWebhook,
   getWebhook: getWebhook,
+  getSetupProfilePage: getSetupProfilePage,
 }
