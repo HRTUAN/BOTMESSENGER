@@ -1,4 +1,4 @@
-require('dotenv').config();
+require("dotenv").config();
 import request from "request"
 //process.env.NAME_VARIABLES
 const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
@@ -110,9 +110,18 @@ let getSetupProfilePage = (req, res) => {
   return res.render("profile.ejs");
 };
 
+let handleSetupProfile = async (req, res) => {
+  try {
+    await homepageService.handleSetupProfileAPI();
+    return res.redirect("/");
+  } catch (e) {
+    console.log(e);
+  }
+};
 module.exports = {
   getHomePage: getHomePage,
   postWebhook: postWebhook,
   getWebhook: getWebhook,
   getSetupProfilePage: getSetupProfilePage,
+  handleSetupProfile: handleSetupProfile,
 }
