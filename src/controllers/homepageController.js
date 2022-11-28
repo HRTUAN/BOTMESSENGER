@@ -1,6 +1,8 @@
 require('dotenv').config();
 import request from "request"
 //process.env.NAME_VARIABLES
+const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
+
 let getHomePage = (req, res) => {
 
   return res.render("homepage.ejs")
@@ -43,7 +45,7 @@ let postWebhook = (req, res) => {
 let getWebhook = (req, res) => {
 
   // Parse the query params
-  let VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+  let VERIFY_TOKEN = MY_VERIFY_TOKEN;
   let mode = req.query["hub.mode"];
   let token = req.query["hub.verify_token"];
   let challenge = req.query["hub.challenge"];
@@ -51,7 +53,7 @@ let getWebhook = (req, res) => {
   // Check if a token and mode is in the query string of the request
   if (mode && token) {
     // Check the mode and token sent is correct
-    if (mode === "subscribe" && token === config.verifyToken) {
+    if (mode === "subscribe" && token === VERIFY_TOKEN) {
       // Respond with the challenge token from the request
       console.log("WEBHOOK_VERIFIED");
       res.status(200).send(challenge);
