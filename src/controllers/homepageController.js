@@ -170,6 +170,6 @@ module.exports = {
   handleSetupProfile: handleSetupProfile,
   handlePostback: handlePostback,
   callSendAPI: callSendAPI,
-  handleMessage: handleMessage,
+  handleMessage: handleMessage
 
-}
+};
