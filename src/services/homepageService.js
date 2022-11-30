@@ -2,7 +2,8 @@ require("dotenv").config();
 import request from "request";
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
-
+// tất cả các function gọi lệnh api đều tuân theo quy tắc của handleSetupProfileAPI 
+// detail "https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start"
 let handleSetupProfileAPI = () => {
     return new Promise((resolve, reject) => {
         try {
