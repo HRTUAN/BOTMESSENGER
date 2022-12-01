@@ -152,7 +152,7 @@ let handlePostback = async (sender_psid, received_postback) => {
 
   // Set the response based on the postback payload
   switch (payload) {
-    case "GET_STARTED":    // 2 case giống nhau ta cho đứng cx nhau đc
+    case "GET_STARTED":
     case "RESTART_CONVERSATION":
       await chatbotService.sendMessageWelcomeNewUser(sender_psid);
       break;

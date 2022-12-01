@@ -78,7 +78,7 @@ let sendMessage = (sender_psid, response) => {
 
             // Send the HTTP request to the Messenger Platform
             request({
-                "uri": "https://graph.facebook.com/v6.0/me/messages",
+                "uri": "https://graph.facebook.com/v15.0/me/messages",
                 "qs": { "access_token": PAGE_ACCESS_TOKEN },
                 "method": "POST",
                 "json": request_body
@@ -140,7 +140,7 @@ let passThreadControl = (sender_psid, app) => {
 
             // Send the HTTP request to the Messenger Platform
             request({
-                "uri": "https://graph.facebook.com/v6.0/me/pass_thread_control",
+                "uri": "https://graph.facebook.com/v15.0/me/pass_thread_control",
                 "qs": { "access_token": PAGE_ACCESS_TOKEN },
                 "method": "POST",
                 "json": request_body
