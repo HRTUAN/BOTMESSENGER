@@ -4,71 +4,7 @@ import request from "request";
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 // tất cả các function gọi lệnh api đều tuân theo quy tắc của handleSetupProfileAPI 
 // detail "https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start"
-let handleSetupProfileAPI = () => {
-    return new Promise((resolve, reject) => {
-        try {
-            let url = `https://graph.facebook.com/v15.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`;
-            let request_body = {
-                "get_started": {
-                    "payload": "GET_STARTED"
-                },
-                "persistent_menu": [
-                    {
-                        "locale": "default",
-                        "composer_input_disabled": false,
-                        "call_to_actions": [
-                            {
-                                "type": "postback",
-                                "title": "Talk to an agent",
-                                "payload": "TALK_AGENT"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "Restart this conversation",
-                                "payload": "RESTART_CONVERSATION"
-                            },
-                            {
-                                "type": "nested",
-                                "title": "More info",
-                                "call_to_actions": [
-                                    {
-                                        "type": "web_url",
-                                        "title": "View Facebook Fan Page",
-                                        "url": "https://www.facebook.com/haryphamdev",
-                                        "webview_height_ratio": "full"
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "title": "View Youtube channel",
-                                        "url": "https://bit.ly/subscribe-haryphamdev",
-                                        "webview_height_ratio": "full"
-                                    },
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "whitelisted_domains": [
-                    "https://bot-tuan.onrender.com/"
-                ]
-            };
-            // Send the HTTP request to the Messenger Platform
-            request({
-                "uri": url,
-                "method": "POST",
-                "json": request_body
-            }, (err, res, body) => {
-                if (!err) {
-                    resolve("Done!")
-                } else {
-                    reject("Unable to send message:" + err);
-                }
-            });
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
+
 
 let getFacebookUsername = (sender_psid) => {
     return new Promise((resolve, reject) => {
@@ -154,7 +90,7 @@ let markMessageRead = (sender_psid) => {
 };
 
 module.exports = {
-    handleSetupProfileAPI: handleSetupProfileAPI,
+
     getFacebookUsername: getFacebookUsername,
     markMessageRead: markMessageRead,
     sendTypingOn: sendTypingOn

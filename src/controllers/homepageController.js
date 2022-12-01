@@ -5,6 +5,7 @@ import templateMessage from "../services/templateMessage";
 
 const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
 
+
 let getHomePage = (req, res) => {
   let facebookAppId = process.env.FACEBOOK_APP_ID;
   return res.render("homepage.ejs", {
@@ -180,15 +181,27 @@ let handlePostback = async (sender_psid, received_postback) => {
   }
 };
 
-let handleSetupProfile = async (req, res) => {
-  try {
-    await homepageService.handleSetupProfileAPI();
-    return res.redirect("/");
-  } catch (e) {
-    console.log(e);
+let handleSetupProfile = (req, res) => {
+  let request_body = {
+    "get_started": { "payload": "GET_STARTED" },
+    "whitelisted_domains": ["https://bot-tuan.onrender.com/"]
   }
-};
 
+  // Send the HTTP request to the Messenger Platform
+  request({
+    "uri": "https://graph.facebook.com/v15.0/me/messenger_profile?access_token=<PAGE_ACCESS_TOKEN>",
+    "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
+    "method": "POST",
+    "json": request_body
+  }, (err, res, body) => {
+    console.log(body)
+    if (!err) {
+      console.log('THÀNH CÔNG sent!')
+    } else {
+      console.error("KHÔNG THÀNH CÔNG");
+    }
+  });
+}
 let getSetupProfilePage = (req, res) => {
   return res.render("profile.ejs");
 };
@@ -240,4 +253,3 @@ module.exports = {
   getInfoOrderPage: getInfoOrderPage,
   setInfoOrder: setInfoOrder
 };
-
