@@ -5,8 +5,10 @@ require("dotenv").config();
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const URL_SHOW_ROOM_GIF = "https://media3.giphy.com/media/TGcD6N8uzJ9FXuDV3a/giphy.gif?cid=ecf05e47afe5be971d1fe6c017ada8e15c29a76fc524ac20&rid=giphy.gif";
 const URL_SALAD_GIF = "https://media0.giphy.com/media/9Vk8qP9EmWB8FePccb/giphy.gif?cid=ecf05e478d0c93d69e72264c8ebbf58a9a1d7ae294754131&rid=giphy.gif";
-const URL_SHOW_FISH = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ztjeouq2jlas5b2zxksm";
+const URL_SHOW_FISH = "https://i-giadinh.vnecdn.net/2022/08/27/Thanh-pham-2-2-7762-1661595348.jpg";
 const URL_SHOW_CLASSIC = "https://ardo.com/files/attachments/.10202/w1440h700q85_AZ1.jpg";
+
+
 let getFacebookUsername = (sender_psid) => {
     return new Promise((resolve, reject) => {
         // Send the HTTP request to the Messenger Platform
@@ -16,7 +18,7 @@ let getFacebookUsername = (sender_psid) => {
             "method": "GET",
         }, (err, res, body) => {
             if (!err) {
-                //convert string to json object
+                //convert string to json object , facebook nó 
                 body = JSON.parse(body);
                 let username = `${body.last_name} ${body.first_name}`;
                 resolve(username);
@@ -30,7 +32,7 @@ let getFacebookUsername = (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response_first = { "text": `Welcome ${username} to HaryPhamDev's Restaurant` };
+            let response_first = { "text": `Chào mừng ${username} đến với nhà hàng Hạnh Hồng` };
             let response_second = {
                 "attachment": {
                     "type": "template",
@@ -38,27 +40,27 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "HaryPhamDev 's restaurant",
-                                "subtitle": "My restaurant is legendary, its classic wine collection equally so.",
+                                "title": "Nhà hàng Hạnh Hồng",
+                                "subtitle": "Nhà hàng Hạnh Hồng xin kính chào quý khách, rất vui lòng được phục vụ",
                                 "image_url": "https://bit.ly/imageToSend",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW MAIN MENU",
+                                        "title": "THỰC ĐƠN CHÍNH",
                                         "payload": "MAIN_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
+                                        "title": "ĐẶT BÀN",
                                         "payload": "RESERVE_TABLE",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "GUIDE TO USE THIS BOT",
+                                        "title": "SỬ DỤNG BOT MESSENGER",
                                         "payload": "GUIDE_BOT",
                                     }
                                 ],
-                            } ]
+                            }]
                     }
                 }
             };
@@ -91,21 +93,21 @@ let sendMainMenu = (sender_psid) => {
                             {
                                 "title": "Our menus",
                                 "subtitle": "We are pleased to offer you a wide-range of menu for lunch or dinner.",
-                                "image_url": "https://bit.ly/imageMenu",
+                                "image_url": "https://cdn.huongnghiepaau.com/wp-content/uploads/2020/08/thuc-don.png.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "LUNCH MENU",
+                                        "title": "MENU BỮA TRƯA",
                                         "payload": "LUNCH_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "DINNER MENU",
+                                        "title": "MENU TỐI",
                                         "payload": "DINNER_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "PUB MENU",
+                                        "title": "ĐỒ UỐNG",
                                         "payload": "PUB_MENU",
                                     }
                                 ],
@@ -118,20 +120,20 @@ let sendMainMenu = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
+                                        "title": "ĐẶT BÀN",
                                         "payload": "RESERVE_TABLE",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Banquet Rooms",
-                                "subtitle": "Restaurant accommodates up to 300 seated guests and similar at cocktail receptions",
+                                "title": "PHÒNG TIỆC LỚN",
+                                "subtitle": "Nhà hàng chúng tôi có các phòng vip sức chứa lên đến 20 người",
                                 "image_url": " https://bit.ly/imageShowRooms",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW ROOMS",
+                                        "title": "XEM PHÒNG",
                                         "payload": "SHOW_ROOMS",
                                     }
                                 ],
@@ -162,66 +164,66 @@ let sendLunchMenu = (sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Appetizers",
+                                "title": "Món khai vị",
                                 "image_url": "https://bit.ly/imageAppetizer",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW APPETIZERS",
+                                        "title": "XEM CÁC MÓN",
                                         "payload": "SHOW_APPETIZERS",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Entree Salad",
-                                "image_url": "https://bit.ly/imageSalad",
+                                "title": "Salad Trộn",
+                                "image_url": "https://www.tasteofhome.com/wp-content/uploads/2017/10/Pork-Balsamic-Strawberry-Salad_EXPS_THFM17_48470_D09_27_2b.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW ENTREE SALAD",
+                                        "title": "CHI TIẾT MÓN",
                                         "payload": "SHOW_ENTREE_SALAD",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Fish and Shell Fish",
-                                "image_url": "https://bit.ly/imageFish",
+                                "title": "Cá nướng tẩm ớt",
+                                "image_url": "https://i-giadinh.vnecdn.net/2022/08/27/Thanh-pham-2-2-7762-1661595348.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW FISH",
+                                        "title": "CHI TIẾT MÓN",
                                         "payload": "SHOW_FISH",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Skeens Classics",
-                                "subtitle": "and Dry-aged on Premise",
-                                "image_url": "https://bit.ly/imageClassics",
+                                "title": "Heo nướng Lạng Sơn",
+                                "subtitle": "Quay nguyên con",
+                                "image_url": "https://d102yvpl683b7p.cloudfront.net/wp-content/uploads/2021/07/28090135/lon-sua-quay.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW CLASSICS",
+                                        "title": "CHI TIẾT MÓN",
                                         "payload": "SHOW_CLASSICS",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Go back",
+                                "title": "Trở lại menu",
                                 "image_url": " https://bit.ly/imageToSend",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "BACK TO MAIN MENU",
+                                        "title": "QUAY LẠI MENU CHÍNH",
                                         "payload": "BACK_TO_MAIN_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
+                                        "title": "ĐẶT BÀN",
                                         "payload": "RESERVE_TABLE",
                                     }
                                 ],
@@ -243,37 +245,37 @@ let sendDinnerMenu = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Lump crab cocktail\n$25.00"
+                "text": "Phở cung đình Huế\n 150.000 đồng"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://djfoodie.com/wp-content/uploads/Crab-Cocktail-3-800.jpg"
+                        "url": "https://cdn.tgdd.vn/Files/2022/01/25/1412805/cach-nau-pho-bo-nam-dinh-chuan-vi-thom-ngon-nhu-hang-quan-202201250313281452.jpg"
                     }
                 }
             };
 
             let response3 = {
-                "text": "House cured salmon\n$16.00"
+                "text": "Canh cá chua\n 250.000 đồng"
             };
             let response4 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://www.thespruceeats.com/thmb/rys3IyH2DB6Ma_r4IQ6emN-2jYw=/4494x3000/filters:fill(auto,1)/simple-homemade-gravlax-recipe-2216618_hero-01-592dadcba64743f98aa1f7a14f81d5b4.jpg"
+                        "url": "https://i-giadinh.vnecdn.net/2021/03/19/ca2-1616122035-2163-1616122469.jpg"
                     }
                 }
             };
 
             let response5 = {
-                "text": "Steamed Whole Maine Lobsters\n$35.00"
+                "text": "Thịt nướng rau củ\n350.000 đồng"
             };
             let response6 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://portcitydaily.com/wp-content/uploads/For-the-Shell-of-It.jpg"
+                        "url": "https://cdn.shopify.com/s/files/1/0574/5242/9511/articles/dai_dien_thit_nuong2_800x.jpg?v=1631290717"
                     }
                 }
             };
@@ -283,16 +285,16 @@ let sendDinnerMenu = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Back to main menu or make a reservation ?`,
+                        "text": `Quay lại menu chính hoặc đặt bàn trước?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "HIỆN THỊ MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
@@ -332,37 +334,37 @@ let sendPubMenu = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Hamburger with French Fries\n$19.50"
+                "text": "Rượu vang Pháp\n 500.000 đồng"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://previews.123rf.com/images/genmike/genmike1411/genmike141100010/33951440-burger-and-french-fries.jpg"
+                        "url": "https://winecellar.vn/wp-content/uploads/2021/10/r%C6%B0%E1%BB%A3u-vang-Ch%C3%A2teau-Franc-Mayne.jpg"
                     }
                 }
             };
 
             let response3 = {
-                "text": "Ham and Cheese on a Baguette as Salad or Sandwich\n$21.00"
+                "text": "Rượu sake nhật\n 500.000 đồng"
             };
             let response4 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://s3-ap-southeast-1.amazonaws.com/v3-live.image.oddle.me/product/Blackforesthamcheesebfd18d.jpg"
+                        "url": "https://duhoc.thanhgiang.com.vn/sites/default/files/ruou-sake.jpg"
                     }
                 }
             };
 
             let response5 = {
-                "text": "Braised short rib salad\n$29.50"
+                "text": "Rượu chuối hột VIP\n 700.000 đồng"
             };
             let response6 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/ribs_0.jpg?itok=bOf0t_NF"
+                        "url": "https://ruouviet.com.vn/wp-content/uploads/2022/02/V_1952-1-scaled.jpg"
                     }
                 }
             };
@@ -372,16 +374,16 @@ let sendPubMenu = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Back to main menu or make a reservation ?`,
+                        "text": `Quay lại menu chính hoặc đặt bàn trước?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "HIỂN THỊ MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
@@ -426,40 +428,40 @@ let sendAppetizer = (sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Little Neck Clams on the Half Shell",
-                                "subtitle": "Dozen - $20.00",
-                                "image_url": "https://bit.ly/appetizers1",
+                                "title": "Tôm chiên xù",
+                                "subtitle": "1 ĐĨA - 100.000 Đồng",
+                                "image_url": "https://sgeviet.vn/wp-content/uploads/2022/01/thuc-don-khai-vi-Tom-chien-xu.jpg",
                             },
 
                             {
-                                "title": "Fresh Oysters",
-                                "subtitle": "1/2 Dozen - $21.00 | Dozen - $40.00",
-                                "image_url": "https://bit.ly/appetizers2",
+                                "title": "Mực hấp rim mắm tỏi",
+                                "subtitle": "0,5 Cân - 120.000 đồng | 1 cân - 220.000 đồng",
+                                "image_url": "https://sgeviet.vn/wp-content/uploads/2022/01/thuc-don-khai-vi-Muc-hap-rim-mam-toi.jpg",
                             },
 
                             {
-                                "title": "Lobster Salad",
-                                "subtitle": "Half Lobster with Avocado and Grapefruit",
-                                "image_url": "https://bit.ly/appetizers3",
+                                "title": "Salad hải sản chua cay",
+                                "subtitle": "Gồm tôm, mực, cua cùng rau củ trộn lẫn",
+                                "image_url": "https://sgeviet.vn/wp-content/uploads/2022/01/thuc-don-khai-vi-Salad-hai-san-chua-cay.jpg",
                             },
 
                             {
-                                "title": "Go back",
+                                "title": "Trở lại",
                                 "image_url": " https://bit.ly/imageToSend",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW LUNCH MENU",
+                                        "title": "XEM MENU TRƯA",
                                         "payload": "BACK_TO_LUNCH_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "BACK TO MAIN MENU",
+                                        "title": "QUAY LẠI MENU CHÍNH",
                                         "payload": "BACK_TO_MAIN_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
+                                        "title": "ĐẶT BÀN",
                                         "payload": "RESERVE_TABLE",
                                     }
                                 ],
@@ -508,56 +510,56 @@ let handleShowRooms = (sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Bull Moose Room",
-                                "subtitle": "The room is suited for parties of up to 25 people",
-                                "image_url": "https://bit.ly/showRoom1",
+                                "title": "Phòng tiệc gia đình",
+                                "subtitle": "Phù hợp cho các gia đình nhỏ từ 5 đến 8 người",
+                                "image_url": "https://conbuom.vn/wp-content/uploads/2021/06/thiet-ke-phong-vip-nha-hang1-700x394.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW DESCRIPTION",
+                                        "title": "XEM CHI TIẾT PHÒNG",
                                         "payload": "SHOW_ROOM_DETAIL",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Lillie Langstry Room",
-                                "subtitle": "The room is suited for parties of up to 35 people",
-                                "image_url": "https://bit.ly/showRoom2",
+                                "title": "Phòng tiệc cỡ lón",
+                                "subtitle": "Tổ chức sinh nhật, party, sức chứa lên tới 20 người",
+                                "image_url": "https://1.bp.blogspot.com/-D_JuTYRnDTo/XykXMIE-3YI/AAAAAAAAAYk/yNe4rqaowJoTSa4tHInMUOBBg-0mcwlEACPcBGAYYCw/w1200-h630-p-k-no-nu/phong-vip-tiep-khach-sang-trong-moi-la-anh11.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW DESCRIPTION",
+                                        "title": "XEM CHI TIẾT PHÒNG",
                                         "payload": "SHOW_ROOM_DETAIL",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Lincoln Room",
-                                "subtitle": "The room is suited for parties of up to 45 people",
-                                "image_url": "https://bit.ly/showRoom3",
+                                "title": "Phòng tiệc công ty",
+                                "subtitle": "Sức chưa lên đến 45 người, dành cho những dịp liên hoan công ty",
+                                "image_url": "http://hoaanvien.com.vn/images/VipRoom/Vip5.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "SHOW DESCRIPTION",
+                                        "title": "XEM CHI TIẾT PHÒNG",
                                         "payload": "SHOW_ROOM_DETAIL",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Go back",
+                                "title": "Trở lại",
                                 "image_url": " https://bit.ly/imageToSend",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "BACK TO MAIN MENU",
+                                        "title": "QUAY LẠI MENU CHÍNH",
                                         "payload": "BACK_TO_MAIN_MENU",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "RESERVE A TABLE",
+                                        "title": "ĐẶT BÀN",
                                         "payload": "RESERVE_TABLE",
                                     }
                                 ],
@@ -583,7 +585,7 @@ let sendMessageAskingQuality = (sender_id) => {
         },
         "messaging_type": "RESPONSE",
         "message": {
-            "text": "What is your party size ?",
+            "text": "Bữa tiệc của bạn gồm bao nhiêu người?",
             "quick_replies": [
                 {
                     "content_type": "text",
@@ -625,7 +627,7 @@ let sendMessageAskingPhoneNumber = (sender_id) => {
         },
         "messaging_type": "RESPONSE",
         "message": {
-            "text": "Thank you. And what's the best phone number for us to reach you at?",
+            "text": "Cám ơn! Xin vui lòng cung cấp số điện thoại của bạn để chúng tôi có thể liên lạc ?",
             "quick_replies": [
                 {
                     "content_type": "user_phone_number",
@@ -679,9 +681,9 @@ let sendMessageDoneReserveTable = async (sender_id) => {
                             "payload": "MAIN_MENU"
                         },
                         {
-                            "type":"phone_number",
-                            "title":"☎ HOT LINE",
-                            "payload":"+911911"
+                            "type": "phone_number",
+                            "title": "☎ HOT LINE",
+                            "payload": "+911911"
                         },
                         {
                             "type": "postback",
@@ -736,10 +738,10 @@ let sendNotificationToTelegram = (user) => {
 };
 
 let sendMessageDefaultForTheBot = (sender_psid) => {
-    return new Promise (async (resolve, reject) => {
-        try{
+    return new Promise(async (resolve, reject) => {
+        try {
             let response1 = {
-                "text": "Sorry, I'm just a bot, man ^^ \nYou can test me with all these buttons or try to make a reservation.\n\nThis video may help you to understand me 😉"
+                "text": "Xin cám ơn, Chúng tôi sẽ liên lại với bạn sớm nhất \n Bạn có thể thử chat lại vơi tôi hoặc đặt bàn lại.\n\nVideo này có thể sẽ giúp bạn 😉"
             };
             //send a media template
             let response2 = {
@@ -754,12 +756,12 @@ let sendMessageDefaultForTheBot = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "web_url",
-                                        "url": "https://bit.ly/subscribe-haryphamdev",
-                                        "title": "Watch more!"
+                                        "url": "https://www.youtube.com/",
+                                        "title": "Xem thêm!"
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "Start over",
+                                        "title": "Bắt đầu lại cuộc trò chuyện",
                                         "payload": "RESTART_CONVERSATION"
                                     }
                                 ]
@@ -773,7 +775,7 @@ let sendMessageDefaultForTheBot = (sender_psid) => {
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
             resolve("done");
-        }catch (e) {
+        } catch (e) {
             reject(e);
         }
     });
@@ -781,7 +783,7 @@ let sendMessageDefaultForTheBot = (sender_psid) => {
 
 let showRoomDetail = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
-        try{
+        try {
             let response1 = {
                 "attachment": {
                     "type": "image",
@@ -795,16 +797,16 @@ let showRoomDetail = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `The rooms is suited for parties up to 45 people.`,
+                        "text": `Các phòng tiệc Vip phù hợp cho bạn tổ chức tiệc, sinh nhật, liên hoan, sức chứa từ 8 đến 40 người`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "HIỂN THỊ MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
@@ -818,7 +820,7 @@ let showRoomDetail = (sender_psid) => {
             await sendMessage(sender_psid, response2);
 
             resolve("done!");
-        }catch (e) {
+        } catch (e) {
             reject(e);
         }
     })
@@ -826,7 +828,7 @@ let showRoomDetail = (sender_psid) => {
 
 let sendSalad = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
-        try{
+        try {
             let response1 = {
                 "attachment": {
                     "type": "image",
@@ -840,16 +842,16 @@ let sendSalad = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Entree Salad \n$25.00`,
+                        "text": `Salad trộn trái cây \n 80.000 đồng`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "HIỂN THỊ MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
@@ -863,7 +865,7 @@ let sendSalad = (sender_psid) => {
             await sendMessage(sender_psid, response2);
 
             resolve("done");
-        }catch (e) {
+        } catch (e) {
             reject(e);
         }
     });
@@ -871,12 +873,12 @@ let sendSalad = (sender_psid) => {
 
 let sendFish = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
-        try{
+        try {
             let response1 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": URL_SHOW_FISH
+                        "url": "https://i-giadinh.vnecdn.net/2022/08/27/Thanh-pham-2-2-7762-1661595348.jpg"
                     }
                 }
             };
@@ -885,16 +887,16 @@ let sendFish = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Fish fry \n$60.00`,
+                        "text": `Cá nướng tẩm ớt \n 300.000 đồng/ 1 đĩa`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "QUAY LẠI MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
@@ -908,7 +910,7 @@ let sendFish = (sender_psid) => {
             await sendMessage(sender_psid, response2);
 
             resolve("done");
-        }catch (e) {
+        } catch (e) {
             reject(e);
         }
     });
@@ -916,12 +918,12 @@ let sendFish = (sender_psid) => {
 
 let sendClassic = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
-        try{
+        try {
             let response1 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": URL_SHOW_CLASSIC
+                        "url": "https://vfs.vn/wp-content/uploads/2021/03/thit-lon-quay-mot-phan-van-hoa-cua-nhung-nguoi-con-xu-lang-gio-heo-quay-la-mac-mat.png"
                     }
                 }
             };
@@ -930,16 +932,16 @@ let sendClassic = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Perfect oven baked fries \n$30.00`,
+                        "text": `Heo nướng Lạng Sơn \n 150.000 đồng/ 1 cân`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "QUAY LẠI MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
@@ -953,7 +955,7 @@ let sendClassic = (sender_psid) => {
             await sendMessage(sender_psid, response2);
 
             resolve("done");
-        }catch (e) {
+        } catch (e) {
             reject(e);
         }
     });
@@ -992,42 +994,13 @@ let sendMessage = (sender_psid, response) => {
 };
 
 let sendTypingOn = (sender_psid) => {
-    return new Promise ((resolve, reject) => {
-       try{
-           let request_body = {
-               "recipient": {
-                   "id": sender_psid
-               },
-               "sender_action":"typing_on"
-           };
-
-           // Send the HTTP request to the Messenger Platform
-           request({
-               "uri": "https://graph.facebook.com/v6.0/me/messages",
-               "qs": { "access_token": PAGE_ACCESS_TOKEN },
-               "method": "POST",
-               "json": request_body
-           }, (err, res, body) => {
-               if (!err) {
-                   resolve('done!')
-               } else {
-                   reject("Unable to send message:" + err);
-               }
-           });
-       } catch (e) {
-           reject(e);
-       }
-    });
-};
-
-let markMessageSeen = (sender_psid) => {
     return new Promise((resolve, reject) => {
         try {
             let request_body = {
                 "recipient": {
                     "id": sender_psid
                 },
-                "sender_action":"mark_seen"
+                "sender_action": "typing_on"
             };
 
             // Send the HTTP request to the Messenger Platform
@@ -1043,8 +1016,37 @@ let markMessageSeen = (sender_psid) => {
                     reject("Unable to send message:" + err);
                 }
             });
-        }catch (e) {
-          reject(e);
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let markMessageSeen = (sender_psid) => {
+    return new Promise((resolve, reject) => {
+        try {
+            let request_body = {
+                "recipient": {
+                    "id": sender_psid
+                },
+                "sender_action": "mark_seen"
+            };
+
+            // Send the HTTP request to the Messenger Platform
+            request({
+                "uri": "https://graph.facebook.com/v6.0/me/messages",
+                "qs": { "access_token": PAGE_ACCESS_TOKEN },
+                "method": "POST",
+                "json": request_body
+            }, (err, res, body) => {
+                if (!err) {
+                    resolve('done!')
+                } else {
+                    reject("Unable to send message:" + err);
+                }
+            });
+        } catch (e) {
+            reject(e);
         }
     });
 };
@@ -1065,11 +1067,11 @@ module.exports = {
     sendMessageAskingPhoneNumber: sendMessageAskingPhoneNumber,
     sendMessageDoneReserveTable: sendMessageDoneReserveTable,
     sendNotificationToTelegram: sendNotificationToTelegram,
-    sendMessageDefaultForTheBot:sendMessageDefaultForTheBot,
+    sendMessageDefaultForTheBot: sendMessageDefaultForTheBot,
     showRoomDetail: showRoomDetail,
     sendSalad: sendSalad,
     sendFish: sendFish,
-    sendClassic:sendClassic,
+    sendClassic: sendClassic,
     markMessageSeen: markMessageSeen,
     sendTypingOn: sendTypingOn,
     sendMessage: sendMessage

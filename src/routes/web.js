@@ -11,7 +11,8 @@ let initWebRoutes = (app) => {
     router.post("/webhook", chatBotController.postWebhook);
     router.get("/profile", homepageController.getFacebookUserProfile);
     router.post("/set-up-user-fb-profile", homepageController.setUpUserFacebookProfile);
-    router.get("/test",async (req, res) =>{
+    router.get("/reserve-table", homepageController.handleReserveTable);
+    router.get("/test", async (req, res) => {
         let user = await chatBotService.getFacebookUsername(3350311028355090);
     });
 

@@ -19,19 +19,19 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "call_to_actions": [
                             {
                                 "type": "web_url",
-                                "title": "View Youtube Channel",
-                                "url": "https://bit.ly/subscribe-haryphamdev",
+                                "title": "Đường đến Nhà hàng",
+                                "url": "https://goo.gl/maps/mrS9yHU9a3KGVtdb8",
                                 "webview_height_ratio": "full"
                             },
                             {
                                 "type": "web_url",
-                                "title": "View Facebook Fan Page",
-                                "url": "https://facebook.com/haryphamdev",
+                                "title": "FanPage Nhà hàng",
+                                "url": "https://www.facebook.com/Nh%C3%A0-h%C3%A0ng-H%E1%BA%A1nh-H%E1%BB%93ng-109268531554881/",
                                 "webview_height_ratio": "full"
                             },
                             {
                                 "type": "postback",
-                                "title": "Restart this conversation",
+                                "title": "Bắt đầu lại cuộc trò chuyện",
                                 "payload": "RESTART_CONVERSATION"
                             }
                         ]
@@ -39,7 +39,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                 ],
 
                 "whitelisted_domains": [
-                    process.env.SERVER_URL                ]
+                    process.env.SERVER_URL]
             };
 
             request({
@@ -248,35 +248,35 @@ let sendGuideToUseBot = (sender_psid) => {
         try {
 
             let response1 = {
-                "text" : "Hi there! I'm a chatbot building with Node.js platform.\nSo, What can I do? 😎" +
-                    "\n\nFirst, I can show you the restaurant's menu: lunch, dinner and pub menu, etc. " +
-                    "\n\nThen, you can make a reservation. No worry, it isn't a 'real' restaurant. Feel free to test me. 😊"
+                "text": "Xin chào, tôi là ChatBot được xây dựng bởi Tuantran.\nTôi có thể làm gì ư? 😎" +
+                    "\n\nThứ nhất, tôi có thể hiện thị cho bạn các Menu thực đơn nhà hàng, đồ uống... " +
+                    "\n\nSau đó, bạn có thể trò chuyện với tôi thông qua các câu lệnh. 😊"
             };
             let response2 = {
-                text: "Second, I can understand the sentences with meaning 'greetings', 'thanks' and 'bye'." +
-                    "\n\nE.g: If you say 'What's up 🇺🇸' or 'hola 🇪🇸' or 'hallo 🇩🇪', I know that it's a 'greetings' sentence. The same thing with 'thanks' and 'bye' sentences." +
-                    "\n\nTry to say: hello, bye, thanks a lot, Bonjour 🇫🇷, etc. you will understand what I mean. 😗"
+                text: "Thứ 2, Tôi được xây dựng trên nền tảng Node.js " +
+                    "\n\nCòn rất nhiều thứ tôi có thể làm được như tạo slide, gửi sản phẩm kèm giá, chat với guest..."
+
             };
             let response3 = {
-                text:  "Finally, remember I'm just a bot. So, That 's what can do for you today. 🤠" +
-                    "\n\nBuild this bot from scratch with Node.js:👇" +
-                    "\nYoutube: \n👉 https://bit.ly/tutorialBuildAwesomeBot"
+                text: "Cuối cùng, tôi là ChatBot được xây dựng bởi Tuantran 🤠" +
+                    "\n\nĐể tạo 1 ChatBot Chuyên nghiệp cho bạn hoặc doanh nghiệp, liên hệ ngay:👇" +
+                    "\nFacebook: \n👉 https://www.facebook.com/profile.php?id=100004305437876"
             };
             let response5 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Back to main menu or make a reservation ?`,
+                        "text": `Trở lại Menu chính hoặc đặt bàn?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "SHOW MAIN MENU",
+                                "title": "HIỂN THỊ MENU CHÍNH",
                                 "payload": "MAIN_MENU"
                             },
                             {
                                 "type": "postback",
-                                "title": "RESERVE A TABLE",
+                                "title": "ĐẶT BÀN",
                                 "payload": "RESERVE_TABLE",
                             }
                         ]
