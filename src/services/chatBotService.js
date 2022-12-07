@@ -50,9 +50,11 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                         "payload": "MAIN_MENU",
                                     },
                                     {
-                                        "type": "postback",
+                                        "type": "web_url",
+                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                         "title": "ĐẶT BÀN",
-                                        "payload": "RESERVE_TABLE",
+                                        "webview_height_ratio": "tall",
+                                        "messenger_extensions": true //fall: open new tab
                                     },
                                     {
                                         "type": "postback",
@@ -91,8 +93,8 @@ let sendMainMenu = (sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Our menus",
-                                "subtitle": "We are pleased to offer you a wide-range of menu for lunch or dinner.",
+                                "title": "Thực Đơn Nhà Hàng",
+                                "subtitle": "Chúng tôi hân hạnh mang đến cho bạn thực đơn phong phú gồm bữa trưa hoặc bữa tối.",
                                 "image_url": "https://cdn.huongnghiepaau.com/wp-content/uploads/2020/08/thuc-don.png.jpg",
                                 "buttons": [
                                     {
@@ -340,7 +342,7 @@ let sendPubMenu = (sender_psid) => {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://winecellar.vn/wp-content/uploads/2021/10/r%C6%B0%E1%BB%A3u-vang-Ch%C3%A2teau-Franc-Mayne.jpg"
+                        "url": "https://www.topruouvang.com/wp-content/uploads/2017/08/Ruou-vang-phap-ngon-duoc-ua-chuong-nhat-5.jpg"
                     }
                 }
             };
@@ -752,7 +754,7 @@ let sendMessageDefaultForTheBot = (sender_psid) => {
                         "elements": [
                             {
                                 "media_type": "video",
-                                "url": "https://www.facebook.com/haryphamdev/videos/635394223852656/",
+                                "url": "https://www.youtube.com/watch?v=AkNyiaP8C9k",
                                 "buttons": [
                                     {
                                         "type": "web_url",
@@ -833,7 +835,7 @@ let sendSalad = (sender_psid) => {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": URL_SALAD_GIF
+                        "url": "https://cdn.tgdd.vn/Files/2017/01/12/936951/giai-ngan-ngay-tet-voi-mon-salad-hoa-qua-kieu-han-quoc-202205241325570525.jpg"
                     }
                 }
             };
