@@ -2,7 +2,7 @@
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) { return; }
     js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/messenger.Extensions.js";
+    js.src = "https://connect.facebook.net/en_US/messenger.Extensions.js";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'Messenger'));
 
@@ -18,7 +18,7 @@ window.extAsyncInit = function () {
         },
         function error(err) {
             // error
-            alert(console.log('Lỗi đặt bàn', err));
+            console.log('Lỗi đặt bàn', err);
         }
     );
 };
@@ -68,7 +68,7 @@ function handleClickButtonReserveTable() {                        // nhiệm v�
                 // webview closed
             }, function error(err) {
                 // an error occurred
-                alert(console.log(err));
+                console.log(err);
             });
 
             //send data to node.js server 
