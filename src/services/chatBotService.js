@@ -121,9 +121,10 @@ let sendMainMenu = (sender_psid) => {
                                 "image_url": " https://bit.ly/imageOpening",
                                 "buttons": [
                                     {
-                                        "type": "postback",
+                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                         "title": "ĐẶT BÀN",
-                                        "payload": "RESERVE_TABLE",
+                                        "webview_height_ratio": "tall",
+                                        "messenger_extensions": true //fall: open new tab
                                     }
                                 ],
                             },
@@ -224,9 +225,10 @@ let sendLunchMenu = (sender_psid) => {
                                         "payload": "BACK_TO_MAIN_MENU",
                                     },
                                     {
-                                        "type": "postback",
+                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                         "title": "ĐẶT BÀN",
-                                        "payload": "RESERVE_TABLE",
+                                        "webview_height_ratio": "tall",
+                                        "messenger_extensions": true //fall: open new tab
                                     }
                                 ],
                             }
@@ -295,9 +297,10 @@ let sendDinnerMenu = (sender_psid) => {
                                 "payload": "MAIN_MENU"
                             },
                             {
-                                "type": "postback",
+                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                 "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
                             }
                         ]
                     }
@@ -384,9 +387,10 @@ let sendPubMenu = (sender_psid) => {
                                 "payload": "MAIN_MENU"
                             },
                             {
-                                "type": "postback",
+                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                 "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
                             }
                         ]
                     }
@@ -462,9 +466,10 @@ let sendAppetizer = (sender_psid) => {
                                         "payload": "BACK_TO_MAIN_MENU",
                                     },
                                     {
-                                        "type": "postback",
+                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                         "title": "ĐẶT BÀN",
-                                        "payload": "RESERVE_TABLE",
+                                        "webview_height_ratio": "tall",
+                                        "messenger_extensions": true //fall: open new tab
                                     }
                                 ],
                             }
@@ -560,9 +565,10 @@ let handleShowRooms = (sender_psid) => {
                                         "payload": "BACK_TO_MAIN_MENU",
                                     },
                                     {
-                                        "type": "postback",
+                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                         "title": "ĐẶT BÀN",
-                                        "payload": "RESERVE_TABLE",
+                                        "webview_height_ratio": "tall",
+                                        "messenger_extensions": true //fall: open new tab
                                     }
                                 ],
                             }
@@ -807,9 +813,10 @@ let showRoomDetail = (sender_psid) => {
                                 "payload": "MAIN_MENU"
                             },
                             {
-                                "type": "postback",
+                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                 "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
                             }
                         ]
                     }
@@ -852,9 +859,10 @@ let sendSalad = (sender_psid) => {
                                 "payload": "MAIN_MENU"
                             },
                             {
-                                "type": "postback",
+                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                 "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
                             }
                         ]
                     }
@@ -897,9 +905,10 @@ let sendFish = (sender_psid) => {
                                 "payload": "MAIN_MENU"
                             },
                             {
-                                "type": "postback",
+                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                 "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
                             }
                         ]
                     }
@@ -942,9 +951,10 @@ let sendClassic = (sender_psid) => {
                                 "payload": "MAIN_MENU"
                             },
                             {
-                                "type": "postback",
+                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
                                 "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
                             }
                         ]
                     }
