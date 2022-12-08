@@ -12,6 +12,7 @@ let initWebRoutes = (app) => {
     router.get("/profile", homepageController.getFacebookUserProfile);
     router.post("/set-up-user-fb-profile", homepageController.setUpUserFacebookProfile);
     router.get("/reserve-table", homepageController.handleReserveTable);
+    router.post("/reserve-table-ajax", homepageController.handlePostReserveTable);
     router.get("/test", async (req, res) => {
         let user = await chatBotService.getFacebookUsername(3350311028355090);
     });
