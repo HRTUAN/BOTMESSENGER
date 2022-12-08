@@ -18,7 +18,7 @@ window.extAsyncInit = function () {
         },
         function error(err) {
             // error
-            console.log('Lỗi đặt bàn', err);
+            alert(console.log('Lỗi đặt bàn', err));
         }
     );
 };
@@ -68,7 +68,7 @@ function handleClickButtonReserveTable() {                        // nhiệm v�
                 // webview closed
             }, function error(err) {
                 // an error occurred
-                console.log(err);
+                alert(console.log(err));
             });
 
             //send data to node.js server 
