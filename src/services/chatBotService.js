@@ -303,7 +303,7 @@ let sendCake = (sender_psid) => {
                                         "messenger_extensions": true //fall: open new tab
                                     }
                                 ],
-                            }
+                            },
                         ]
                     }
                 }
