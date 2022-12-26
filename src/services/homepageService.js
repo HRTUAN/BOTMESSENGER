@@ -18,14 +18,13 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                         "composer_input_disabled": false,
                         "call_to_actions": [
                             {
-                                "type": "web_url",
-                                "title": "Đường đến Nhà hàng",
-                                "url": "https://goo.gl/maps/mrS9yHU9a3KGVtdb8",
-                                "webview_height_ratio": "full"
+                                "type": "postback",
+                                "title": "Đường đến La quán",
+                                "payload": "LOCATION"
                             },
                             {
                                 "type": "web_url",
-                                "title": "FanPage Nhà hàng",
+                                "title": "FanPage của La",
                                 "url": "https://www.facebook.com/Nh%C3%A0-h%C3%A0ng-H%E1%BA%A1nh-H%E1%BB%93ng-109268531554881/",
                                 "webview_height_ratio": "full"
                             },

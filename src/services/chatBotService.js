@@ -32,7 +32,7 @@ let getFacebookUsername = (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response_first = { "text": `Chào mừng ${username} đến với nhà hàng Hạnh Hồng` };
+            let response_first = { "text": `Chào mừng ${username} đến với La - Bánh và Trà` };
             let response_second = {
                 "attachment": {
                     "type": "template",
@@ -40,27 +40,25 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Nhà hàng Hạnh Hồng",
-                                "subtitle": "Nhà hàng Hạnh Hồng xin kính chào quý khách, rất vui lòng được phục vụ",
-                                "image_url": "https://bit.ly/imageToSend",
+                                "title": "La - Bánh và trà",
+                                "subtitle": "Rât vui vì có thể giúp bạn",
+                                "image_url": "https://www.facebook.com/101510912406657/photos/a.101511675739914/194298636461217",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "THỰC ĐƠN CHÍNH",
-                                        "payload": "MAIN_MENU",
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                        "title": "ĐẶT BÀN",
-                                        "webview_height_ratio": "tall",
-                                        "messenger_extensions": true //fall: open new tab
+                                        "title": "ĐỒ UỐNG",
+                                        "payload": "SENDDRINK",
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "SỬ DỤNG BOT MESSENGER",
-                                        "payload": "GUIDE_BOT",
-                                    }
+                                        "title": "ĐỒ ĂN - BÁNH",
+                                        "payload": "SENDCAKE",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "ĐỊA CHỈ QUÁN",
+                                        "payload": "LOCATION",
+                                    },
                                 ],
                             }]
                     }
@@ -83,7 +81,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     });
 };
 
-let sendMainMenu = (sender_psid) => {
+let SENDDRINK = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response = {
@@ -93,55 +91,98 @@ let sendMainMenu = (sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Thực Đơn Nhà Hàng",
-                                "subtitle": "Chúng tôi hân hạnh mang đến cho bạn thực đơn phong phú gồm bữa trưa hoặc bữa tối.",
-                                "image_url": "https://cdn.huongnghiepaau.com/wp-content/uploads/2020/08/thuc-don.png.jpg",
+                                "title": "Thực Đơn đồ uống",
+                                "subtitle": "Vuốt qua để xem chi tiết",
+                                "image_url": "https://nguyenlieuphachemientay.com/wp-content/uploads/2020/09/Diem-danh-15-loai-do-uong-hot-nhat-nam-co-vy.jpg",
+
+                            },
+
+                            {
+                                "title": "Cafe truyền thống",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://cafesach.com.vn/wp-content/uploads/2018/07/bi-quyet-pha-che-cafe-truyen-thong-thom-ngon-dam-dac-chuan-vi-1-e1532876313993.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "MENU BỮA TRƯA",
-                                        "payload": "LUNCH_MENU",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "MENU TỐI",
-                                        "payload": "DINNER_MENU",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "ĐỒ UỐNG",
-                                        "payload": "PUB_MENU",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_CAFE1",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Hours",
-                                "subtitle": "MON-FRI 10AM - 11PM  | SAT 5PM - 10PM | SUN 5PM - 9PM",
-                                "image_url": " https://bit.ly/imageOpening",
+                                "title": "Cafe ngoại nhập",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://nof.com.vn/wp-content/uploads/2021/01/top-6-do-uong-duoc-ua-chuong-nhat-trong-quan-cafe-phong-cach-thuong-thuc-ca-phe-3-1.jpg",
                                 "buttons": [
                                     {
-                                        "type": "web_url",
-                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                        "title": "ĐẶT BÀN",
-                                        "webview_height_ratio": "tall",
-                                        "messenger_extensions": true //fall: open new tab
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_CAFE2",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Sinh tố, nước ép hoa quả",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://vinmec-prod.s3.amazonaws.com/images/20200616_025929_602920_duong-co-gay-ra-ben.max-1800x1800.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_SINHTO",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Đá xay siro",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://yt.cdnxbvn.com/medias/uploads/197/197460-siro-dau.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_SIRO",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Trà đào cam xả",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://cdn.dealtoday.vn/1b720191a9c543999ed82e6fe2b71f5f.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_TRADAO",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Cacao nóng",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://vietblend.vn/wp-content/uploads/2016/10/0a99b4cc1da4fbfaa2b5.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_CACAO",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Việt quất đá xay",
+                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "image_url": " https://smoothiedays.com/wp-content/uploads/2020/08/cach-lam-sinh-to-viet-quat.png",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_VIETQUAT",
                                     }
                                 ],
                             },
 
-                            {
-                                "title": "PHÒNG TIỆC LỚN",
-                                "subtitle": "Nhà hàng chúng tôi có các phòng vip sức chứa lên đến 20 người",
-                                "image_url": " https://bit.ly/imageShowRooms",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "XEM PHÒNG",
-                                        "payload": "SHOW_ROOMS",
-                                    }
-                                ],
-                            }
 
 
                         ]
@@ -158,7 +199,7 @@ let sendMainMenu = (sender_psid) => {
 
 };
 
-let sendLunchMenu = (sender_psid) => {
+let SENDCAKE = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response = {
@@ -168,67 +209,96 @@ let sendLunchMenu = (sender_psid) => {
                         "template_type": "generic",
                         "elements": [
                             {
-                                "title": "Món khai vị",
-                                "image_url": "https://bit.ly/imageAppetizer",
+                                "title": "Panna cotta chanh leo, dâu tây",
+                                "image_url": "https://matonghungyen.com/wp-content/uploads/2013/06/pannacotta.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "XEM CÁC MÓN",
-                                        "payload": "SHOW_APPETIZERS",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_Panna ",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Salad Trộn",
-                                "image_url": "https://www.tasteofhome.com/wp-content/uploads/2017/10/Pork-Balsamic-Strawberry-Salad_EXPS_THFM17_48470_D09_27_2b.jpg",
+                                "title": "Bánh hành kéo sợi",
+                                "image_url": "https://media1.nguoiduatin.vn/thumb_x1280x857/media/ngac-kim-giang/2022/01/15/tet-nay-tro-tai-lam-banh-hanh-pho-mai-keo-soi-dai-khach.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT MÓN",
-                                        "payload": "SHOW_ENTREE_SALAD",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_BANHHANH",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Cá nướng tẩm ớt",
-                                "image_url": "https://i-giadinh.vnecdn.net/2022/08/27/Thanh-pham-2-2-7762-1661595348.jpg",
+                                "title": "Bánh ống ruốc gà",
+                                "image_url": "https://i.ytimg.com/vi/Ra0-XzAyv8w/maxresdefault.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT MÓN",
-                                        "payload": "SHOW_FISH",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_BANHGA",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Heo nướng Lạng Sơn",
-                                "subtitle": "Quay nguyên con",
-                                "image_url": "https://d102yvpl683b7p.cloudfront.net/wp-content/uploads/2021/07/28090135/lon-sua-quay.jpg",
+                                "title": "Bông lan trứng muối",
+                                "image_url": "https://cdn.cet.edu.vn/wp-content/uploads/2019/11/banh-bong-lan-trung-muoi.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT MÓN",
-                                        "payload": "SHOW_CLASSICS",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_BONGLAN",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Red velvet",
+                                "image_url": "https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_RED",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Phomai xoài",
+                                "image_url": "https://cdn.mediamart.vn/images/news/tr-tai-kheo-tay-lam-banh-phomai-xoai-khong-cn-dung-lo-nung_2f55e910.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_PHOMAI",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Hạt dẻ cười",
+                                "image_url": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2015/02/Cherry-and-pistachio-Biscotti-recipe.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_PHOMAI",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Trở lại menu",
-                                "image_url": " https://bit.ly/imageToSend",
+                                "title": "XEM TOÀN BỘ MENU",
+                                "subtitle": "Full menu bánh và nước",
+                                "image_url": " https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "QUAY LẠI MENU CHÍNH",
-                                        "payload": "BACK_TO_MAIN_MENU",
-                                    },
+
                                     {
                                         "type": "web_url",
-                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                        "title": "ĐẶT BÀN",
+                                        "url": 'https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg',
+                                        "title": "ẤN VÀO NHÉ",
                                         "webview_height_ratio": "tall",
                                         "messenger_extensions": true //fall: open new tab
                                     }
@@ -247,61 +317,32 @@ let sendLunchMenu = (sender_psid) => {
     });
 };
 
-let sendDinnerMenu = (sender_psid) => {
+let LOCATION = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Phở cung đình Huế\n 150.000 đồng"
+                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://cdn.tgdd.vn/Files/2022/01/25/1412805/cach-nau-pho-bo-nam-dinh-chuan-vi-thom-ngon-nhu-hang-quan-202201250313281452.jpg"
+                        "url": "https://postimg.cc/14s32tw0"
                     }
                 }
             };
 
             let response3 = {
-                "text": "Canh cá chua\n 250.000 đồng"
-            };
-            let response4 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i-giadinh.vnecdn.net/2021/03/19/ca2-1616122035-2163-1616122469.jpg"
-                    }
-                }
-            };
-
-            let response5 = {
-                "text": "Thịt nướng rau củ\n350.000 đồng"
-            };
-            let response6 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://cdn.shopify.com/s/files/1/0574/5242/9511/articles/dai_dien_thit_nuong2_800x.jpg?v=1631290717"
-                    }
-                }
-            };
-
-            let response7 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Quay lại menu chính hoặc đặt bàn trước?`,
+                        "text": 'Bạn muốn xem đường đi đến La quán',
                         "buttons": [
                             {
-                                "type": "postback",
-                                "title": "HIỆN THỊ MENU CHÍNH",
-                                "payload": "MAIN_MENU"
-                            },
-                            {
                                 "type": "web_url",
-                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                "title": "ĐẶT BÀN",
+                                "url": `https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0`,
+                                "title": "GOOGLE MAP",
                                 "webview_height_ratio": "tall",
                                 "messenger_extensions": true //fall: open new tab
                             }
@@ -318,18 +359,6 @@ let sendDinnerMenu = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response5);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response6);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response7);
 
             resolve("done");
         } catch (e) {
@@ -1074,9 +1103,9 @@ let markMessageSeen = (sender_psid) => {
 module.exports = {
     getFacebookUsername: getFacebookUsername,
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
-    sendMainMenu: sendMainMenu,
-    sendLunchMenu: sendLunchMenu,
-    sendDinnerMenu: sendDinnerMenu,
+    SENDDRINK: SENDDRINK,
+    SENDCAKE: SENDCAKE,
+    LOCATION: LOCATION,
     sendPubMenu: sendPubMenu,
     sendAppetizer: sendAppetizer,
     goBackToMainMenu: goBackToMainMenu,
