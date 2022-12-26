@@ -199,7 +199,7 @@ let SENDDRINK = (sender_psid) => {
 
 };
 
-let SENDCAKE = (sender_psid) => {
+let sendCake = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response = {
@@ -1104,7 +1104,7 @@ module.exports = {
     getFacebookUsername: getFacebookUsername,
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
     SENDDRINK: SENDDRINK,
-    SENDCAKE: SENDCAKE,
+    sendCake: sendCake,
     LOCATION: LOCATION,
     sendPubMenu: sendPubMenu,
     sendAppetizer: sendAppetizer,
