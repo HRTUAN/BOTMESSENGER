@@ -205,7 +205,7 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "LOCATION":
             await homepageService.sendDetailLocation(sender_psid);
             break;
-        case "LOCATION2":
+        case "LOCATION_M":
             await homepageService.sendDetailLocation2(sender_psid);
             break;
         case "SENDCAKE":
