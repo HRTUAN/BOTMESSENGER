@@ -20,7 +20,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                             {
                                 "type": "postback",
                                 "title": "Đường đến La quán",
-                                "payload": "LOCATION"
+                                "payload": "LOCATION2"
                             },
                             {
                                 "type": "web_url",

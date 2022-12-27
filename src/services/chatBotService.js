@@ -410,6 +410,10 @@ let sendDetailLocation = (sender_psid) => {
     });
 };
 
+let sendDetailLocation2 = (sender_psid) => {
+    sendDetailLocation = (sender_psid);
+};
+
 let sendCafe2 = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -1328,6 +1332,7 @@ module.exports = {
     SENDDRINK: SENDDRINK,
     sendCake: sendCake,
     sendDetailLocation: sendDetailLocation,
+    sendDetailLocation2: sendDetailLocation2,
     sendCafe1: sendCafe1,
     sendCafe2: sendCafe2,
     sendSinhto: sendSinhto,
