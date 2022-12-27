@@ -208,27 +208,27 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "SENDCAKE":
             await chatBotService.sendCake(sender_psid);
             break;
-        case "DINNER_MENU":
-            await chatBotService.sendDinnerMenu(sender_psid);
+        case "DETAIL_CAFE1":
+            await chatBotService.sendCafe1(sender_psid);
             break;
-        case "PUB_MENU":
-            await chatBotService.sendPubMenu(sender_psid);
+        case "DETAIL_CAFE2":
+            await chatBotService.sendcafe2(sender_psid);
             break;
-        case "RESERVE_TABLE":
-            await chatBotService.handleReserveTable(sender_psid);
+        case "DETAIL_SINHTO":
+            await chatBotService.sendSinhto(sender_psid);
             break;
-        case "SHOW_ROOMS":
-            await chatBotService.handleShowRooms(sender_psid);
+        case "DETAIL_SIRO":
+            await chatBotService.sendSiro(sender_psid);
             break;
-        case "SHOW_ROOM_DETAIL":
-            await chatBotService.showRoomDetail(sender_psid);
+        case "DETAIL_TRADAO":
+            await chatBotService.sendTradao(sender_psid);
             break;
-        case "SHOW_APPETIZERS":
-            await chatBotService.sendAppetizer(sender_psid);
+        case "DETAIL_CACAO":
+            await chatBotService.sendCacao(sender_psid);
             break;
 
-        case "SHOW_ENTREE_SALAD":
-            await chatBotService.sendSalad(sender_psid);
+        case "DETAIL_VIETQUAT":
+            await chatBotService.sendVietquat(sender_psid);
             break;
         case "SHOW_FISH":
             await chatBotService.sendFish(sender_psid);
