@@ -42,7 +42,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                             {
                                 "title": "La - Bánh và trà",
                                 "subtitle": "Rât vui vì có thể giúp bạn",
-                                "image_url": "https://postimg.cc/XXb3WqPv",
+                                "image_url": "https://i.postimg.cc/wxtBhscD/318186105-194298633127884-7427338723877398292-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -316,43 +316,43 @@ let sendCake = (sender_psid) => {
 let sendLocation = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            // let response1 = {
-            //     "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
-            // };
+            let response1 = {
+                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
+            };
             let response = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://postimg.cc/14s32tw0"
+                        "url": "https://product.hstatic.net/200000055918/product/pasted_20image_200_20333_8786dfc56bbe403fb9a2ff380504fdcf.png"
                     }
                 }
             };
 
-            // let response4 = {
-            //     "attachment": {
-            //         "type": "template",
-            //         "payload": {
-            //             "template_type": "button",
-            //             "text": 'Bạn muốn xem đường đi đến La quán',
-            //             "buttons": [
-            //                 {
-            //                     "type": "web_url",
-            //                     "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
-            //                     "title": "GOOGLE MAP",
-            //                 }
-            //             ],
-            //         }
-            //     }
-            // };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": 'Bạn muốn xem đường đi đến La quán',
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
+                                "title": "GOOGLE MAP",
+                            }
+                        ],
+                    }
+                }
+            };
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response);
+            await sendMessage(sender_psid, response1);
 
-            // await sendTypingOn(sender_psid);
-            // await sendMessage(sender_psid, response2);
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
 
-            // await sendTypingOn(sender_psid);
-            // await sendMessage(sender_psid, response4);
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
 
             resolve("done");
         } catch (e) {
