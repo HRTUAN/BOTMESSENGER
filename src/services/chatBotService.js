@@ -57,7 +57,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                     {
                                         "type": "postback",
                                         "title": "ĐỊA CHỈ QUÁN",
-                                        "payload": "LOCATION",
+                                        "payload": "LOCATION_PUB",
                                     },
                                 ],
                             }]
