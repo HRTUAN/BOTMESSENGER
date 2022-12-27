@@ -206,7 +206,7 @@ let handlePostback = async (sender_psid, received_postback) => {
             await homepageService.LOCATION(sender_psid);
             break;
         case "SENDCAKE":
-            await chatBotService.SENDCAKE(sender_psid);
+            await chatBotService.sendCake(sender_psid);
             break;
         case "DINNER_MENU":
             await chatBotService.sendDinnerMenu(sender_psid);
