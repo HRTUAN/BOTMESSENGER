@@ -32,7 +32,7 @@ let getFacebookUsername = (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response_first = { "text": `Chào mừng ${username} đến với La - Bánh và Trà` };
+            let response_first = { "text": `Chào mừng ${username} đến với La - Bánh và Trà\nRất vui vì có thể giúp bạn\nTôi là phần mềm trả lời tự động\nTrong lúc chưa có ai hỗ trợ bạn\nTôi có thể giúp bạn xem qua Menu` };
             let response_second = {
                 "attachment": {
                     "type": "template",
@@ -41,7 +41,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "elements": [
                             {
                                 "title": "La - Bánh và trà",
-                                "subtitle": "Rât vui vì có thể giúp bạn\nTôi là Phần mềm trả lời tự động\nCó thể giúp bạn xem qua Menu trước khi đặt",
+                                "subtitle": "",
                                 "image_url": "https://i.postimg.cc/wxtBhscD/318186105-194298633127884-7427338723877398292-n.jpg",
                                 "buttons": [
                                     {
@@ -57,7 +57,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                     {
                                         "type": "postback",
                                         "title": "ĐẶT BÁNH SINH NHẬT",
-                                        "payload": "LOCATION_PUB",
+                                        "payload": "BIRTHDAYCAKE",
                                     },
                                     {
                                         "type": "postback",
