@@ -313,54 +313,6 @@ let sendCake = (sender_psid) => {
     });
 };
 
-let sendLocation = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response1 = {
-                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
-            };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://product.hstatic.net/200000055918/product/pasted_20image_200_20333_8786dfc56bbe403fb9a2ff380504fdcf.png"
-                    }
-                }
-            };
-
-            // let response3 = {
-            //     "attachment": {
-            //         "type": "template",
-            //         "payload": {
-            //             "template_type": "button",
-            //             "text": 'Bạn muốn xem đường đi đến La quán',
-            //             "buttons": [
-            //                 {
-            //                     "type": "web_url",
-            //                     "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
-            //                     "title": "GOOGLE MAP",
-            //                 }
-            //             ],
-            //         }
-            //     }
-            // };
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
-
-            // await sendTypingOn(sender_psid);
-            // await sendMessage(sender_psid, response3);
-
-            resolve("done");
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
 let sendCafe1 = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -391,6 +343,52 @@ let sendCafe1 = (sender_psid) => {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendDetailLocation = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/66G474QP/Capture.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `XEM ĐƯỜNG ĐI`,
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
+                                "title": "GOOGLE MAP"
                             }
                         ]
                     }
@@ -791,29 +789,17 @@ let sendBanhhanh = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Panna cotta chanh leo\n 40.000 đồng/miếng"
+                "text": "Bánh hành kéo sợi\n 70.000 đồng/túi/10 miếng"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "http://cdn.tgdd.vn/Files/2021/07/26/1370853/bo-tui-cach-lam-panna-cotta-chanh-day-thom-lung-chua-chua-ngot-ngot-ai-cung-me-202112200928180251.jpg"
+                        "url": "https://cf.shopee.vn/file/7343063c62aedea24d5bb4fb233f2160"
                     }
                 }
             };
-
             let response3 = {
-                "text": "Panna cotta dâu tây\n 50.000 đồng/miếng"
-            };
-            let response4 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://monngon.tv/wp-content/uploads/2020/09/41efa91ebc4c5c3e6a02d35a9879f0df-cach-lam-panna-cotta-dau-tay-nho.jpg"
-                    }
-                }
-            };
-            let response5 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
@@ -844,17 +830,65 @@ let sendBanhhanh = (sender_psid) => {
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
             await sendTypingOn(sender_psid);
-
-            await sendMessage(sender_psid, response4);
-            await sendTypingOn(sender_psid);
-
-            await sendMessage(sender_psid, response5);
             resolve("done");
         } catch (e) {
             reject(e);
         }
     });
 };
+
+let sendBanhga = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bánh ống ruốc gà\n 10.000 đồng/ống\nMua 5 ống chỉ còn 45.000 đồng"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.ytimg.com/vi/Ra0-XzAyv8w/maxresdefault.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            await sendTypingOn(sender_psid);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 let handleReserveTable = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
@@ -1198,145 +1232,6 @@ let showRoomDetail = (sender_psid) => {
     })
 };
 
-let sendSalad = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response1 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://cdn.tgdd.vn/Files/2017/01/12/936951/giai-ngan-ngay-tet-voi-mon-salad-hoa-qua-kieu-han-quoc-202205241325570525.jpg"
-                    }
-                }
-            };
-            let response2 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": `Salad trộn trái cây \n 80.000 đồng`,
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "HIỂN THỊ MENU CHÍNH",
-                                "payload": "MAIN_MENU"
-                            },
-                            {
-                                "type": "web_url",
-                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                "title": "ĐẶT BÀN",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true //fall: open new tab
-                            }
-                        ]
-                    }
-                }
-            };
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response1);
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
-
-            resolve("done");
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
-let sendFish = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response1 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i-giadinh.vnecdn.net/2022/08/27/Thanh-pham-2-2-7762-1661595348.jpg"
-                    }
-                }
-            };
-            let response2 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": `Cá nướng tẩm ớt \n 300.000 đồng/ 1 đĩa`,
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "QUAY LẠI MENU CHÍNH",
-                                "payload": "MAIN_MENU"
-                            },
-                            {
-                                "type": "web_url",
-                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                "title": "ĐẶT BÀN",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true //fall: open new tab
-                            }
-                        ]
-                    }
-                }
-            };
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response1);
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
-
-            resolve("done");
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
-let sendClassic = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response1 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://vfs.vn/wp-content/uploads/2021/03/thit-lon-quay-mot-phan-van-hoa-cua-nhung-nguoi-con-xu-lang-gio-heo-quay-la-mac-mat.png"
-                    }
-                }
-            };
-            let response2 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": `Heo nướng Lạng Sơn \n 150.000 đồng/ 1 cân`,
-                        "buttons": [
-                            {
-                                "type": "postback",
-                                "title": "QUAY LẠI MENU CHÍNH",
-                                "payload": "MAIN_MENU"
-                            },
-                            {
-                                "type": "postback",
-                                "title": "ĐẶT BÀN",
-                                "payload": "RESERVE_TABLE",
-                            }
-                        ]
-                    }
-                }
-            };
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response1);
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
-
-            resolve("done");
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
 let sendMessage = (sender_psid, response) => {
     return new Promise((resolve, reject) => {
         try {
@@ -1432,13 +1327,14 @@ module.exports = {
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
     SENDDRINK: SENDDRINK,
     sendCake: sendCake,
-    sendLocation: sendLocation,
+    sendDetailLocation: sendDetailLocation,
     sendCafe1: sendCafe1,
     sendCafe2: sendCafe2,
     sendSinhto: sendSinhto,
     sendSiro: sendSiro,
     sendPanna: sendPanna,
     sendBanhhanh: sendBanhhanh,
+    sendBanhga: sendBanhga,
     handleReserveTable: handleReserveTable,
     handleShowRooms: handleShowRooms,
     sendMessageAskingQuality: sendMessageAskingQuality,

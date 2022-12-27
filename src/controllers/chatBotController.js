@@ -203,7 +203,7 @@ let handlePostback = async (sender_psid, received_postback) => {
             await chatBotService.SENDDRINK(sender_psid);
             break;
         case "LOCATION":
-            await homepageService.sendLocation(sender_psid);
+            await homepageService.sendDetailLocation(sender_psid);
             break;
         case "SENDCAKE":
             await chatBotService.sendCake(sender_psid);
@@ -236,7 +236,18 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "DETAIL_BANHHANH":
             await chatBotService.sendBanhhanh(sender_psid);
             break;
-
+        case "DETAIL_BANHGA":
+            await chatBotService.sendBanhga(sender_psid);
+            break;
+        case "DETAIL_BANHHANH":
+            await chatBotService.sendBanhhanh(sender_psid);
+            break;
+        case "DETAIL_BANHHANH":
+            await chatBotService.sendBanhhanh(sender_psid);
+            break;
+        case "DETAIL_BANHHANH":
+            await chatBotService.sendBanhhanh(sender_psid);
+            break;
         case "BACK_TO_MAIN_MENU":
             await chatBotService.goBackToMainMenu(sender_psid);
             break;
