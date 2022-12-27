@@ -297,8 +297,6 @@ let sendCake = (sender_psid) => {
                                         "type": "web_url",
                                         "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                         "title": "ẤN VÀO NHÉ",
-                                        "webview_height_ratio": "tall",
-                                        "messenger_extensions": true //fall: open new tab
                                     }
                                 ],
                             },
@@ -341,8 +339,6 @@ let sendLocation = (sender_psid) => {
                                 "type": "web_url",
                                 "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
                                 "title": "GOOGLE MAP",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true //fall: open new tab
                             }
                         ],
                     }
