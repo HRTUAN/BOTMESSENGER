@@ -20,12 +20,12 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                             {
                                 "type": "postback",
                                 "title": "Đường đến La quán",
-                                "payload": "SENDDRINK"
+                                "payload": "LOCATION_M"
                             },
                             {
                                 "type": "web_url",
                                 "title": "FanPage của La",
-                                "url": "https://www.facebook.com/Nh%C3%A0-h%C3%A0ng-H%E1%BA%A1nh-H%E1%BB%93ng-109268531554881/",
+                                "url": "https://www.facebook.com/La-B%C3%A1nh-v%C3%A0-tr%C3%A0-101510912406657",
                                 "webview_height_ratio": "full"
                             },
                             {
