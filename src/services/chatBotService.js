@@ -41,7 +41,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "elements": [
                             {
                                 "title": "La - Bánh và trà",
-                                "subtitle": "Rât vui vì có thể giúp bạn",
+                                "subtitle": "Rât vui vì có thể giúp bạn\nTôi là Phần mềm trả lời tự động\nCó thể giúp bạn xem qua Menu trước khi đặt",
                                 "image_url": "https://i.postimg.cc/wxtBhscD/318186105-194298633127884-7427338723877398292-n.jpg",
                                 "buttons": [
                                     {
@@ -56,9 +56,15 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                     },
                                     {
                                         "type": "postback",
+                                        "title": "ĐẶT BÁNH SINH NHẬT",
+                                        "payload": "LOCATION_PUB",
+                                    },
+                                    {
+                                        "type": "postback",
                                         "title": "ĐỊA CHỈ QUÁN",
                                         "payload": "LOCATION_PUB",
                                     },
+
                                 ],
                             }]
                     }
@@ -340,6 +346,11 @@ let sendCafe1 = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
@@ -368,7 +379,7 @@ let sendDetailLocation = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
+                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\nGần trường THCS VĂN LANG"
             };
             let response2 = {
                 "attachment": {
@@ -387,7 +398,7 @@ let sendDetailLocation = (sender_psid) => {
                         "buttons": [
                             {
                                 "type": "web_url",
-                                "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
+                                "url": "https://goo.gl/maps/JuWxkYpM6hEYCa8t8",
                                 "title": "GOOGLE MAP"
                             }
                         ]
@@ -408,10 +419,6 @@ let sendDetailLocation = (sender_psid) => {
             reject(e);
         }
     });
-};
-
-let sendDetailLocation2 = (sender_psid) => {
-    sendDetailLocation = (sender_psid);
 };
 
 let sendCafe2 = (sender_psid) => {
@@ -439,6 +446,11 @@ let sendCafe2 = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU ĐỒ UỐNG ",
                                 "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
                             },
                             {
                                 "type": "web_url",
@@ -492,6 +504,11 @@ let sendSinhto = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
@@ -541,6 +558,11 @@ let sendSiro = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU ĐỒ UỐNG ",
                                 "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
                             },
                             {
                                 "type": "web_url",
@@ -594,6 +616,11 @@ let sendTradao = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
@@ -645,6 +672,11 @@ let sendCacao = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
@@ -694,6 +726,11 @@ let sendVietquat = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU ĐỒ UỐNG ",
                                 "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
                             },
                             {
                                 "type": "web_url",
@@ -759,6 +796,11 @@ let sendPanna = (sender_psid) => {
                                 "payload": "SENDCAKE"
                             },
                             {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
@@ -816,6 +858,11 @@ let sendBanhhanh = (sender_psid) => {
                                 "payload": "SENDCAKE"
                             },
                             {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
                                 "type": "web_url",
                                 "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                 "title": "XEM TOÀN BỘ MENU"
@@ -866,6 +913,11 @@ let sendBanhga = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
                             },
                             {
                                 "type": "web_url",
@@ -1332,7 +1384,6 @@ module.exports = {
     SENDDRINK: SENDDRINK,
     sendCake: sendCake,
     sendDetailLocation: sendDetailLocation,
-    sendDetailLocation2: sendDetailLocation2,
     sendCafe1: sendCafe1,
     sendCafe2: sendCafe2,
     sendSinhto: sendSinhto,
