@@ -1,6 +1,6 @@
 import request from "request";
 import chatBotService from "../services/chatBotService";
-import chatBotService from "../services/chatBotService";
+import chatBotController from "../controllers/chatBotController";
 
 require("dotenv").config();
 
@@ -299,6 +299,8 @@ let sendGuideToUseBot = (sender_psid) => {
         }
     });
 };
+
+
 module.exports = {
     setUpMessengerPlatform: setUpMessengerPlatform,
     sendResponseGreetings: sendResponseGreetings,
