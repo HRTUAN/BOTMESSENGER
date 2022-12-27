@@ -219,6 +219,90 @@ let sendCake = (sender_psid) => {
                                     }
                                 ],
                             },
+                            {
+                                "title": "Bánh hành kéo sợi",
+                                "image_url": "https://media1.nguoiduatin.vn/thumb_x1280x857/media/ngac-kim-giang/2022/01/15/tet-nay-tro-tai-lam-banh-hanh-pho-mai-keo-soi-dai-khach.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_BANHHANH",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Bánh ống ruốc gà",
+                                "image_url": "https://i.ytimg.com/vi/Ra0-XzAyv8w/maxresdefault.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_BANHGA",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Bông lan trứng muối",
+                                "image_url": "https://cdn.cet.edu.vn/wp-content/uploads/2019/11/banh-bong-lan-trung-muoi.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_BONGLAN",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Red velvet",
+                                "image_url": "https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_RED",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Phomai xoài",
+                                "image_url": "https://cdn.mediamart.vn/images/news/tr-tai-kheo-tay-lam-banh-phomai-xoai-khong-cn-dung-lo-nung_2f55e910.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_PHOMAI",
+                                    }
+                                ],
+                            },
+                            // {
+                            //     "title": "Hạt dẻ cười",
+                            //     "image_url": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2015/02/Cherry-and-pistachio-Biscotti-recipe.jpg",
+                            //     "buttons": [
+                            //         {
+                            //             "type": "postback",
+                            //             "title": "XEM CHI TIẾT",
+                            //             "payload": "DETAIL_PHOMAI",
+                            //         }
+                            //     ],
+                            // },
+
+                            // {
+                            //     "title": "XEM TOÀN BỘ MENU",
+                            //     "subtitle": "Full menu bánh và nước",
+                            //     "image_url": " https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "buttons": [
+
+                            //         {
+                            //             "type": "web_url",
+                            //             "url": 'https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg',
+                            //             "title": "ẤN VÀO NHÉ",
+                            //             "webview_height_ratio": "tall",
+                            //             "messenger_extensions": true //fall: open new tab
+                            //         }
+                            //     ],
+                            // },
                         ]
                     }
                 }
@@ -238,42 +322,42 @@ let LOCATION = (sender_psid) => {
             let response1 = {
                 "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://postimg.cc/14s32tw0"
-                    }
-                }
-            };
+            // let response2 = {
+            //     "attachment": {
+            //         "type": "image",
+            //         "payload": {
+            //             "url": "https://postimg.cc/14s32tw0"
+            //         }
+            //     }
+            // };
 
-            let response3 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": 'Bạn muốn xem đường đi đến La quán',
-                        "buttons": [
-                            {
-                                "type": "web_url",
-                                "url": `https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0`,
-                                "title": "GOOGLE MAP",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true //fall: open new tab
-                            }
-                        ]
-                    }
-                }
-            };
+            // let response3 = {
+            //     "attachment": {
+            //         "type": "template",
+            //         "payload": {
+            //             "template_type": "button",
+            //             "text": 'Bạn muốn xem đường đi đến La quán',
+            //             "buttons": [
+            //                 {
+            //                     "type": "web_url",
+            //                     "url": `https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0`,
+            //                     "title": "GOOGLE MAP",
+            //                     "webview_height_ratio": "tall",
+            //                     "messenger_extensions": true //fall: open new tab
+            //                 }
+            //             ]
+            //         }
+            //     }
+            // };
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
 
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            // await sendTypingOn(sender_psid);
+            // await sendMessage(sender_psid, response2);
 
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
+            // await sendTypingOn(sender_psid);
+            // await sendMessage(sender_psid, response3);
 
             resolve("done");
         } catch (e) {
