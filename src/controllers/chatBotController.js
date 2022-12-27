@@ -191,11 +191,6 @@ let handlePostback = async (sender_psid, received_postback) => {
     switch (payload) {
         case "GET_STARTED":
         case "RESTART_CONVERSATION":
-            //get facebook username
-            let username = await chatBotService.getFacebookUsername(sender_psid);
-            username = username;
-            //send welcome response to users
-
             await chatBotService.sendResponseWelcomeNewCustomer(username, sender_psid);
             break;
         case "SENDDRINK":
