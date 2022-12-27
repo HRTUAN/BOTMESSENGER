@@ -276,33 +276,33 @@ let sendCake = (sender_psid) => {
                                     }
                                 ],
                             },
-                            // {
-                            //     "title": "Hạt dẻ cười",
-                            //     "image_url": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2015/02/Cherry-and-pistachio-Biscotti-recipe.jpg",
-                            //     "buttons": [
-                            //         {
-                            //             "type": "postback",
-                            //             "title": "XEM CHI TIẾT",
-                            //             "payload": "DETAIL_PHOMAI",
-                            //         }
-                            //     ],
-                            // },
+                            {
+                                "title": "Hạt dẻ cười",
+                                "image_url": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2015/02/Cherry-and-pistachio-Biscotti-recipe.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_PHOMAI",
+                                    }
+                                ],
+                            },
 
-                            // {
-                            //     "title": "XEM TOÀN BỘ MENU",
-                            //     "subtitle": "Full menu bánh và nước",
-                            //     "image_url": " https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "buttons": [
+                            {
+                                "title": "XEM TOÀN BỘ MENU",
+                                "subtitle": "Full menu bánh và nước",
+                                "image_url": " https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "buttons": [
 
-                            //         {
-                            //             "type": "web_url",
-                            //             "url": 'https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg',
-                            //             "title": "ẤN VÀO NHÉ",
-                            //             "webview_height_ratio": "tall",
-                            //             "messenger_extensions": true //fall: open new tab
-                            //         }
-                            //     ],
-                            // },
+                                    {
+                                        "type": "web_url",
+                                        "url": 'https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg',
+                                        "title": "ẤN VÀO NHÉ",
+                                        "webview_height_ratio": "tall",
+                                        "messenger_extensions": true //fall: open new tab
+                                    }
+                                ],
+                            },
                         ]
                     }
                 }
@@ -316,48 +316,48 @@ let sendCake = (sender_psid) => {
     });
 };
 
-let LOCATION = (sender_psid) => {
+let sendLocation = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
                 "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
             };
-            // let response2 = {
-            //     "attachment": {
-            //         "type": "image",
-            //         "payload": {
-            //             "url": "https://postimg.cc/14s32tw0"
-            //         }
-            //     }
-            // };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://postimg.cc/14s32tw0"
+                    }
+                }
+            };
 
-            // let response3 = {
-            //     "attachment": {
-            //         "type": "template",
-            //         "payload": {
-            //             "template_type": "button",
-            //             "text": 'Bạn muốn xem đường đi đến La quán',
-            //             "buttons": [
-            //                 {
-            //                     "type": "web_url",
-            //                     "url": `https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0`,
-            //                     "title": "GOOGLE MAP",
-            //                     "webview_height_ratio": "tall",
-            //                     "messenger_extensions": true //fall: open new tab
-            //                 }
-            //             ]
-            //         }
-            //     }
-            // };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": 'Bạn muốn xem đường đi đến La quán',
+                        "buttons": [
+                            {
+                                "type": "web_url",
+                                "url": `https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0`,
+                                "title": "GOOGLE MAP",
+                                "webview_height_ratio": "tall",
+                                "messenger_extensions": true //fall: open new tab
+                            }
+                        ]
+                    }
+                }
+            };
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
 
-            // await sendTypingOn(sender_psid);
-            // await sendMessage(sender_psid, response2);
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
 
-            // await sendTypingOn(sender_psid);
-            // await sendMessage(sender_psid, response3);
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
 
             resolve("done");
         } catch (e) {
@@ -1104,7 +1104,7 @@ module.exports = {
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
     SENDDRINK: SENDDRINK,
     sendCake: sendCake,
-    LOCATION: LOCATION,
+    sendLocation: sendLocation,
     sendPubMenu: sendPubMenu,
     sendAppetizer: sendAppetizer,
     goBackToMainMenu: goBackToMainMenu,
