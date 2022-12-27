@@ -316,10 +316,10 @@ let sendCake = (sender_psid) => {
 let sendLocation = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response1 = {
-                "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
-            };
-            let response2 = {
+            // let response1 = {
+            //     "text": "Địa chỉ của La quán tại 29 phố thương mại Hạ long\n Gần trường THCS VĂN LANG"
+            // };
+            let response = {
                 "attachment": {
                     "type": "image",
                     "payload": {
@@ -328,31 +328,31 @@ let sendLocation = (sender_psid) => {
                 }
             };
 
-            let response4 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "button",
-                        "text": 'Bạn muốn xem đường đi đến La quán',
-                        "buttons": [
-                            {
-                                "type": "web_url",
-                                "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
-                                "title": "GOOGLE MAP",
-                            }
-                        ],
-                    }
-                }
-            };
+            // let response4 = {
+            //     "attachment": {
+            //         "type": "template",
+            //         "payload": {
+            //             "template_type": "button",
+            //             "text": 'Bạn muốn xem đường đi đến La quán',
+            //             "buttons": [
+            //                 {
+            //                     "type": "web_url",
+            //                     "url": "https://www.google.com/maps/dir/20.9659108,107.0893801/20.9513611,107.0783905/@20.9515035,107.0780997,18.25z/data=!4m4!4m3!1m1!4e1!1m0",
+            //                     "title": "GOOGLE MAP",
+            //                 }
+            //             ],
+            //         }
+            //     }
+            // };
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response1);
+            await sendMessage(sender_psid, response);
 
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            // await sendTypingOn(sender_psid);
+            // await sendMessage(sender_psid, response2);
 
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
+            // await sendTypingOn(sender_psid);
+            // await sendMessage(sender_psid, response4);
 
             resolve("done");
         } catch (e) {
