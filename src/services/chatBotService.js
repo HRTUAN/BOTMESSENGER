@@ -42,7 +42,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                             {
                                 "title": "La - Bánh và trà",
                                 "subtitle": "Rât vui vì có thể giúp bạn",
-                                "image_url": "https://www.facebook.com/101510912406657/photos/a.101511675739914/194298636461217",
+                                "image_url": "https://postimg.cc/XXb3WqPv",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -215,7 +215,7 @@ let sendCake = (sender_psid) => {
                                     {
                                         "type": "postback",
                                         "title": "XEM CHI TIẾT",
-                                        "payload": "DETAIL_Panna ",
+                                        "payload": "DETAIL_PANNA ",
                                     }
                                 ],
                             },
@@ -361,63 +361,36 @@ let sendLocation = (sender_psid) => {
     });
 };
 
-let sendPubMenu = (sender_psid) => {
+let sendCafe1 = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Rượu vang Pháp\n 500.000 đồng"
+                "text": "Cà phê truyền thống đậm đặc\n 50.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://www.topruouvang.com/wp-content/uploads/2017/08/Ruou-vang-phap-ngon-duoc-ua-chuong-nhat-5.jpg"
+                        "url": "https://product.hstatic.net/200000055918/product/pasted_20image_200_20333_8786dfc56bbe403fb9a2ff380504fdcf.png"
                     }
                 }
             };
-
             let response3 = {
-                "text": "Rượu sake nhật\n 500.000 đồng"
-            };
-            let response4 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://duhoc.thanhgiang.com.vn/sites/default/files/ruou-sake.jpg"
-                    }
-                }
-            };
-
-            let response5 = {
-                "text": "Rượu chuối hột VIP\n 700.000 đồng"
-            };
-            let response6 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://ruouviet.com.vn/wp-content/uploads/2022/02/V_1952-1-scaled.jpg"
-                    }
-                }
-            };
-
-            let response7 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Quay lại menu chính hoặc đặt bàn trước?`,
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "HIỂN THỊ MENU CHÍNH",
-                                "payload": "MAIN_MENU"
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
                             },
                             {
                                 "type": "web_url",
-                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                "title": "ĐẶT BÀN",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true //fall: open new tab
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
                             }
                         ]
                     }
@@ -432,18 +405,6 @@ let sendPubMenu = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response5);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response6);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response7);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -451,55 +412,36 @@ let sendPubMenu = (sender_psid) => {
     });
 };
 
-let sendAppetizer = (sender_psid) => {
+let sendCafe2 = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response = {
+            let response1 = {
+                "text": "Cappuccino họa tiết\n 60.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://www.acouplecooks.com/wp-content/uploads/2020/10/how-to-make-cappuccino-005.jpg"
+                    }
+                }
+            };
+            let response3 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
-                        "template_type": "generic",
-                        "elements": [
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
                             {
-                                "title": "Tôm chiên xù",
-                                "subtitle": "1 ĐĨA - 100.000 Đồng",
-                                "image_url": "https://sgeviet.vn/wp-content/uploads/2022/01/thuc-don-khai-vi-Tom-chien-xu.jpg",
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
                             },
-
                             {
-                                "title": "Mực hấp rim mắm tỏi",
-                                "subtitle": "0,5 Cân - 120.000 đồng | 1 cân - 220.000 đồng",
-                                "image_url": "https://sgeviet.vn/wp-content/uploads/2022/01/thuc-don-khai-vi-Muc-hap-rim-mam-toi.jpg",
-                            },
-
-                            {
-                                "title": "Salad hải sản chua cay",
-                                "subtitle": "Gồm tôm, mực, cua cùng rau củ trộn lẫn",
-                                "image_url": "https://sgeviet.vn/wp-content/uploads/2022/01/thuc-don-khai-vi-Salad-hai-san-chua-cay.jpg",
-                            },
-
-                            {
-                                "title": "Trở lại",
-                                "image_url": " https://bit.ly/imageToSend",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "XEM MENU TRƯA",
-                                        "payload": "BACK_TO_LUNCH_MENU",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "QUAY LẠI MENU CHÍNH",
-                                        "payload": "BACK_TO_MAIN_MENU",
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                        "title": "ĐẶT BÀN",
-                                        "webview_height_ratio": "tall",
-                                        "messenger_extensions": true //fall: open new tab
-                                    }
-                                ],
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
                             }
                         ]
                     }
@@ -507,19 +449,273 @@ let sendAppetizer = (sender_psid) => {
             };
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
         } catch (e) {
             reject(e);
         }
     });
 };
 
-let goBackToMainMenu = (sender_psid) => {
-    sendMainMenu(sender_psid);
+let sendSinhto = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Nước ép sinh tố hoa quả\n 60.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "http://monngondongian.com/wp-content/uploads/2022/11/sinh-to-trai-cay.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
 };
 
-let goBackToLunchMenu = (sender_psid) => {
-    sendLunchMenu(sender_psid);
+let sendSiro = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Đá bào Siro dâu tây\n 30.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "http://cdn.tgdd.vn/Files/2020/07/27/1274183/cach-lam-da-bao-7up-giai-khat-cuc-da-cho-ngay-he-khien-be-thich-me-202007271605191683.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendTradao = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Trà đào cam xả\n 40.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://horecavn.com/uploads/images/bai-viet/cong-thuc-tra-dao-cam-sa-chuan-vi-quan-2-.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendCacao = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Trà đào cam xả\n 40.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://cacaomi.com/wp-content/uploads/2019/04/tac-dung-cua-ca-cao.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendVietquat = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Trà đào cam xả\n 40.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://nguyenlieuhuuphuoc.com/data/images/h%C3%ACnh/smoothie-viet-quat.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "web_url",
+                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "XEM TOÀN BỘ MENU"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
 };
 
 let handleReserveTable = (sender_psid) => {
@@ -1100,10 +1296,10 @@ module.exports = {
     SENDDRINK: SENDDRINK,
     sendCake: sendCake,
     sendLocation: sendLocation,
-    sendPubMenu: sendPubMenu,
-    sendAppetizer: sendAppetizer,
-    goBackToMainMenu: goBackToMainMenu,
-    goBackToLunchMenu: goBackToLunchMenu,
+    sendCafe1: sendCafe1,
+    sendCafe2: sendCafe2,
+    sendSinhto: sendSinhto,
+    sendSiro: sendSiro,
     handleReserveTable: handleReserveTable,
     handleShowRooms: handleShowRooms,
     sendMessageAskingQuality: sendMessageAskingQuality,
@@ -1112,9 +1308,9 @@ module.exports = {
     sendNotificationToTelegram: sendNotificationToTelegram,
     sendMessageDefaultForTheBot: sendMessageDefaultForTheBot,
     showRoomDetail: showRoomDetail,
-    sendSalad: sendSalad,
-    sendFish: sendFish,
-    sendClassic: sendClassic,
+    sendTradao: sendTradao,
+    sendCacao: sendCacao,
+    sendVietquat: sendVietquat,
     markMessageSeen: markMessageSeen,
     sendTypingOn: sendTypingOn,
     sendMessage: sendMessage
