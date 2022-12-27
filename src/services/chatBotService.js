@@ -41,7 +41,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                         "elements": [
                             {
                                 "title": "La - Bánh và trà",
-                                "subtitle": "",
+                                "subtitle": " ",
                                 "image_url": "https://i.postimg.cc/wxtBhscD/318186105-194298633127884-7427338723877398292-n.jpg",
                                 "buttons": [
                                     {
@@ -56,14 +56,9 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "ĐẶT BÁNH SINH NHẬT",
-                                        "payload": "BIRTHDAYCAKE",
-                                    },
-                                    {
-                                        "type": "postback",
                                         "title": "ĐỊA CHỈ QUÁN",
                                         "payload": "LOCATION_PUB",
-                                    },
+                                    }
 
                                 ],
                             }]
