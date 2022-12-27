@@ -230,11 +230,11 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "DETAIL_VIETQUAT":
             await chatBotService.sendVietquat(sender_psid);
             break;
-        case "SHOW_FISH":
-            await chatBotService.sendFish(sender_psid);
+        case "DETAIL_PANNA":
+            await chatBotService.sendPanna(sender_psid);
             break;
-        case "SHOW_CLASSICS":
-            await chatBotService.sendClassic(sender_psid);
+        case "DETAIL_BANHHANH":
+            await chatBotService.sendBanhhanh(sender_psid);
             break;
 
         case "BACK_TO_MAIN_MENU":
