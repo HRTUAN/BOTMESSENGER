@@ -210,7 +210,7 @@ let handlePostback = async (sender_psid, received_postback) => {
             await chatBotService.sendBacxiu(sender_psid);
             break;
         case "DETAIL_CAFEMUOI":
-            await chatBotService.sendcafe2(sender_psid);
+            await chatBotService.sendcafeMuoi(sender_psid);
             break;
         case "DETAIL_CAFECOTDUA":
             await chatBotService.sendCafeCotdua(sender_psid);
@@ -272,7 +272,6 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "DETAIL_LONKHO":
             await chatBotService.sendLonkho(sender_psid);
             break;
-
         case "BIRTHDAYCAKE":
             await chatBotService.sendBirthday(sender_psid);
             break;

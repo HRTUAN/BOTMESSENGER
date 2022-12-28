@@ -103,7 +103,6 @@ let SENDDRINK = (sender_psid) => {
                                     }
                                 ],
                             },
-
                             {
                                 "title": "Cafe muối",
                                 "subtitle": "PRICE: 30K/CỐC",
@@ -243,7 +242,7 @@ let sendCake = (sender_psid) => {
                                     {
                                         "type": "postback",
                                         "title": "XEM CHI TIẾT",
-                                        "payload": "DETAIL_PANNA ",
+                                        "payload": "DETAIL_PANNA",
                                     }
                                 ],
                             },
@@ -317,7 +316,7 @@ let sendCake = (sender_psid) => {
                             },
                             {
                                 "title": "Su kem sing",
-                                "image_url": "https://i.postimg.cc/QMbZStp7/321660964-545204400858066-6505721763871901878-n.jpg",
+                                "image_url": "https://i.postimg.cc/c4FSQ6B8/320245704-680578116862159-7384754460312516384-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -445,7 +444,7 @@ let sendBirthday = (sender_psid) => {
                                     {
                                         "type": "postback",
                                         "title": "XEM CHI TIẾT",
-                                        "payload": "DETAIL_WHIPPINGXOAI ",
+                                        "payload": "DETAIL_WHIPPINGXOAI",
                                     }
                                 ],
                             },
@@ -520,7 +519,7 @@ let sendBirthday = (sender_psid) => {
                             {
                                 "title": "XEM THÊM CÁC MENU",
                                 "subtitle": "Full menu bánh và nước",
-                                "image_url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "image_url": "https://i.postimg.cc/3wcT6ZrT/mo-hinh-ca-phe-banh-ngot-phat-trien-manh.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -531,6 +530,11 @@ let sendBirthday = (sender_psid) => {
                                         "type": "postback",
                                         "title": "MENU NƯỚC",
                                         "payload": "SENDDRINK",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "BÁNH SINH NHẬT",
+                                        "payload": "BIRTHDAYCAKE",
                                     }
 
                                 ],
@@ -567,7 +571,7 @@ let sendBacxiu = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -650,17 +654,17 @@ let sendDetailLocation = (sender_psid) => {
     });
 };
 
-let sendCafe2 = (sender_psid) => {
+let sendCafeCotdua = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Cafe Muối thơm béo\n 30.000 đồng/cốc"
+                "text": "Cafe cốt dừa thơm ngon\n 40.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://i.postimg.cc/Gph0s14K/cach-pha-cafe-muoi-1.jpg"
+                        "url": "https://i.postimg.cc/RVRXJJwr/tu-pha-che-ca-phe-cot-dua-cuc-thom-ngon-va-hap-dan-ngay-tai-nha-nd0.jpg"
                     }
                 }
             };
@@ -669,7 +673,7 @@ let sendCafe2 = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -706,17 +710,17 @@ let sendCafe2 = (sender_psid) => {
     });
 };
 
-let sendCafeCotdua = (sender_psid) => {
+let sendcafeMuoi = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Cafe cốt dừa thơm ngon\n 40.000 đồng/cốc"
+                "text": "Cafe Muối thơm béo\n 30.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://i.postimg.cc/RVRXJJwr/tu-pha-che-ca-phe-cot-dua-cuc-thom-ngon-va-hap-dan-ngay-tai-nha-nd0.jpg"
+                        "url": "https://i.postimg.cc/Gph0s14K/cach-pha-cafe-muoi-1.jpg"
                     }
                 }
             };
@@ -725,7 +729,7 @@ let sendCafeCotdua = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -781,7 +785,7 @@ let sendTraxoai = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -837,7 +841,7 @@ let sendTradao = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -893,7 +897,7 @@ let sendLuctra = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -949,7 +953,7 @@ let sendTradau = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -996,7 +1000,7 @@ let sendTrachanh = (sender_psid) => {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://i.postimg.cc/YS1JVqJt/tra-dau-1.jpg"
+                        "url": "https://i.postimg.cc/NGZYsbwC/1608869384-403-thumbnail-width640height480.jpg"
                     }
                 }
             };
@@ -1005,7 +1009,7 @@ let sendTrachanh = (sender_psid) => {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "text": `Bạn muốn xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
@@ -2394,7 +2398,7 @@ module.exports = {
     sendCake: sendCake,
     sendDetailLocation: sendDetailLocation,
     sendBacxiu: sendBacxiu,
-    sendCafe2: sendCafe2,
+    sendcafeMuoi: sendcafeMuoi,
     sendCafeCotdua: sendCafeCotdua,
     sendTraxoai: sendTraxoai,
     sendTrachanh: sendTrachanh,
