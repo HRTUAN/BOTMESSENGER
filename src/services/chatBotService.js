@@ -4,9 +4,6 @@ require("dotenv").config();
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const URL_SHOW_ROOM_GIF = "https://media3.giphy.com/media/TGcD6N8uzJ9FXuDV3a/giphy.gif?cid=ecf05e47afe5be971d1fe6c017ada8e15c29a76fc524ac20&rid=giphy.gif";
-const URL_SALAD_GIF = "https://media0.giphy.com/media/9Vk8qP9EmWB8FePccb/giphy.gif?cid=ecf05e478d0c93d69e72264c8ebbf58a9a1d7ae294754131&rid=giphy.gif";
-const URL_SHOW_FISH = "https://i-giadinh.vnecdn.net/2022/08/27/Thanh-pham-2-2-7762-1661595348.jpg";
-const URL_SHOW_CLASSIC = "https://ardo.com/files/attachments/.10202/w1440h700q85_AZ1.jpg";
 
 
 let getFacebookUsername = (sender_psid) => {
@@ -18,10 +15,13 @@ let getFacebookUsername = (sender_psid) => {
             "method": "GET",
         }, (err, res, body) => {
             if (!err) {
-                //convert string to json object , facebook nó 
+                //convert string to json object , facebook
                 body = JSON.parse(body);
                 let username = `${body.last_name} ${body.first_name}`;
+
+
                 resolve(username);
+                console.log(username)
             } else {
                 reject("Unable to send message:" + err);
             }
@@ -99,57 +99,57 @@ let SENDDRINK = (sender_psid) => {
                             },
 
                             {
-                                "title": "Cafe truyền thống",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
-                                "image_url": " https://cafesach.com.vn/wp-content/uploads/2018/07/bi-quyet-pha-che-cafe-truyen-thong-thom-ngon-dam-dac-chuan-vi-1-e1532876313993.jpg",
+                                "title": "Bạc xỉu",
+                                "subtitle": "PRICE: 30K/CỐC",
+                                "image_url": "https://i.postimg.cc/CLZ4vrqN/bac-xiu-da.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "CHI TIẾT",
-                                        "payload": "DETAIL_CAFE1",
+                                        "payload": "DETAIL_BACXIU",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "Cafe ngoại nhập",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
-                                "image_url": " https://nof.com.vn/wp-content/uploads/2021/01/top-6-do-uong-duoc-ua-chuong-nhat-trong-quan-cafe-phong-cach-thuong-thuc-ca-phe-3-1.jpg",
+                                "title": "Cafe muối",
+                                "subtitle": "PRICE: 30K/CỐC",
+                                "image_url": "https://i.postimg.cc/rFCYGPXP/ca-phe-muoi.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "CHI TIẾT",
-                                        "payload": "DETAIL_CAFE2",
+                                        "payload": "DETAIL_CAFEMUOI",
                                     }
                                 ],
                             },
                             {
-                                "title": "Sinh tố, nước ép hoa quả",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
-                                "image_url": " https://vinmec-prod.s3.amazonaws.com/images/20200616_025929_602920_duong-co-gay-ra-ben.max-1800x1800.jpg",
+                                "title": "Cafe Cốt dừa",
+                                "subtitle": "PRICE: 40K/CỐC",
+                                "image_url": "https://i.postimg.cc/SKXrPZ3q/ca-phe-cot-dua.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "CHI TIẾT",
-                                        "payload": "DETAIL_SINHTO",
+                                        "payload": "DETAIL_CAFECOTDUA",
                                     }
                                 ],
                             },
                             {
-                                "title": "Đá xay siro",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
-                                "image_url": " https://yt.cdnxbvn.com/medias/uploads/197/197460-siro-dau.jpg",
+                                "title": "Trà xoài nha đam",
+                                "subtitle": "PRICE: 45K/CỐC",
+                                "image_url": " https://i.postimg.cc/vZKjD6dY/cach-lam-tra-xoai-3.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "CHI TIẾT",
-                                        "payload": "DETAIL_SIRO",
+                                        "payload": "DETAIL_TRAXOAI",
                                     }
                                 ],
                             },
                             {
                                 "title": "Trà đào cam xả",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
+                                "subtitle": "PRICE: 45K/CỐC",
                                 "image_url": " https://cdn.dealtoday.vn/1b720191a9c543999ed82e6fe2b71f5f.jpg",
                                 "buttons": [
                                     {
@@ -160,26 +160,60 @@ let SENDDRINK = (sender_psid) => {
                                 ],
                             },
                             {
-                                "title": "Cacao nóng",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
-                                "image_url": " https://vietblend.vn/wp-content/uploads/2016/10/0a99b4cc1da4fbfaa2b5.jpg",
+                                "title": "Lục trà vải chanh",
+                                "subtitle": "PRICE: 45K/CỐC",
+                                "image_url": "https://i.postimg.cc/14hX9z5J/tra-vai-cam-sa.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "CHI TIẾT",
-                                        "payload": "DETAIL_CACAO",
+                                        "payload": "DETAIL_LUCTRA",
                                     }
                                 ],
                             },
                             {
-                                "title": "Việt quất đá xay",
-                                "subtitle": "PRICE: 40 - 50K/CỐC",
-                                "image_url": " https://smoothiedays.com/wp-content/uploads/2020/08/cach-lam-sinh-to-viet-quat.png",
+                                "title": "Trà dâu Hana",
+                                "subtitle": "PRICE: 45K/CỐC",
+                                "image_url": "https://i.postimg.cc/854xpXp3/foody-upload-api-foody-mobile-tr-8afca038-210529163258.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "CHI TIẾT",
-                                        "payload": "DETAIL_VIETQUAT",
+                                        "payload": "DETAIL_TRADAU",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Trà tắc, Trà chanh",
+                                "subtitle": "PRICE: 20K/CỐC",
+                                "image_url": "https://i.postimg.cc/L400x1nz/W1-A57n-EO14-CX-tra-chanh-sa-web.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "CHI TIẾT",
+                                        "payload": "DETAIL_TRACHANH",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Topping các loại",
+                                "subtitle": "PRICE: 10K/Topping",
+                                "image_url": "https://i.postimg.cc/C5VC2wpp/ghe-tra-sua-fu-tea-thuong-thuc-do-uong-ngon-bo-re-noi-tieng-5-1662698860.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "Topping Machiato ",
+                                        "payload": "DETAIL_MACHIATO",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Topping Nha đam",
+                                        "payload": "DETAIL_NHADAM",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "Topping Chân trâu",
+                                        "payload": "DETAIL_CHANTRAU",
                                     }
                                 ],
                             },
@@ -314,17 +348,17 @@ let sendCake = (sender_psid) => {
     });
 };
 
-let sendCafe1 = (sender_psid) => {
+let sendBacxiu = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Cà phê truyền thống đậm đặc\n 50.000 đồng/cốc"
+                "text": "Bạc xỉu đậm chất\n30.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://product.hstatic.net/200000055918/product/pasted_20image_200_20333_8786dfc56bbe403fb9a2ff380504fdcf.png"
+                        "url": "https://i.postimg.cc/Yqw132tp/5-cach-pha-bac-xiu-cuc-ngon-hap-dan-nhu-quan-ca-phe-tai-nha-202203171037441306.jpg"
                     }
                 }
             };
@@ -345,11 +379,11 @@ let sendCafe1 = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -420,13 +454,13 @@ let sendCafe2 = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Cappuccino họa tiết\n 60.000 đồng/cốc"
+                "text": "Cafe Muối thơm béo\n 30.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://www.acouplecooks.com/wp-content/uploads/2020/10/how-to-make-cappuccino-005.jpg"
+                        "url": "https://i.postimg.cc/Gph0s14K/cach-pha-cafe-muoi-1.jpg"
                     }
                 }
             };
@@ -447,11 +481,11 @@ let sendCafe2 = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -472,17 +506,17 @@ let sendCafe2 = (sender_psid) => {
     });
 };
 
-let sendSinhto = (sender_psid) => {
+let sendCafeCotdua = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Nước ép sinh tố hoa quả\n 60.000 đồng/cốc"
+                "text": "Cafe cốt dừa thơm ngon\n 40.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "http://monngondongian.com/wp-content/uploads/2022/11/sinh-to-trai-cay.jpg"
+                        "url": "https://i.postimg.cc/RVRXJJwr/tu-pha-che-ca-phe-cot-dua-cuc-thom-ngon-va-hap-dan-ngay-tai-nha-nd0.jpg"
                     }
                 }
             };
@@ -503,11 +537,11 @@ let sendSinhto = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -528,17 +562,17 @@ let sendSinhto = (sender_psid) => {
     });
 };
 
-let sendSiro = (sender_psid) => {
+let sendTraxoai = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Đá bào Siro dâu tây\n 30.000 đồng/cốc"
+                "text": "Trà xoài nha đam thanh nhiệt\n 45.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "http://cdn.tgdd.vn/Files/2020/07/27/1274183/cach-lam-da-bao-7up-giai-khat-cuc-da-cho-ngay-he-khien-be-thich-me-202007271605191683.jpg"
+                        "url": "https://i.postimg.cc/vZKjD6dY/cach-lam-tra-xoai-3.jpg"
                     }
                 }
             };
@@ -559,11 +593,11 @@ let sendSiro = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -588,7 +622,7 @@ let sendTradao = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Trà đào cam xả\n 40.000 đồng/cốc"
+                "text": "Trà đào cam xả\n 45.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
@@ -615,11 +649,11 @@ let sendTradao = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -640,17 +674,17 @@ let sendTradao = (sender_psid) => {
     });
 };
 
-let sendCacao = (sender_psid) => {
+let sendLuctra = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Trà đào cam xả\n 40.000 đồng/cốc"
+                "text": "Lục trà vải chanh\n 45.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://cacaomi.com/wp-content/uploads/2019/04/tac-dung-cua-ca-cao.jpg"
+                        "url": "https://i.postimg.cc/Gp2ygHBy/travai2.jpg"
                     }
                 }
             };
@@ -671,11 +705,11 @@ let sendCacao = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -696,17 +730,17 @@ let sendCacao = (sender_psid) => {
     });
 };
 
-let sendVietquat = (sender_psid) => {
+let sendTradau = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Trà đào cam xả\n 40.000 đồng/cốc"
+                "text": "Trà dâu Hana\n 45.000 đồng/cốc"
             };
             let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://nguyenlieuhuuphuoc.com/data/images/h%C3%ACnh/smoothie-viet-quat.jpg"
+                        "url": "https://i.postimg.cc/YS1JVqJt/tra-dau-1.jpg"
                     }
                 }
             };
@@ -727,11 +761,67 @@ let sendVietquat = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendTrachanh = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Trà tắc, trà chanh mát lạnh\n 20.000 đồng/cốc"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/YS1JVqJt/tra-dau-1.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu đồ uống?`,
+                        "buttons": [
                             {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
-                            }
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BÁNH ",
+                                "payload": "SENDCAKE"
+                            },
+                            // {
+                            //     "type": "web_url",
+                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                            //     "title": "XEM TOÀN BỘ MENU"
+                            // }
                         ]
                     }
                 }
@@ -1379,10 +1469,11 @@ module.exports = {
     SENDDRINK: SENDDRINK,
     sendCake: sendCake,
     sendDetailLocation: sendDetailLocation,
-    sendCafe1: sendCafe1,
+    sendBacxiu: sendBacxiu,
     sendCafe2: sendCafe2,
-    sendSinhto: sendSinhto,
-    sendSiro: sendSiro,
+    sendCafeCotdua: sendCafeCotdua,
+    sendTraxoai: sendTraxoai,
+    sendTrachanh: sendTrachanh,
     sendPanna: sendPanna,
     sendBanhhanh: sendBanhhanh,
     sendBanhga: sendBanhga,
@@ -1395,8 +1486,8 @@ module.exports = {
     sendMessageDefaultForTheBot: sendMessageDefaultForTheBot,
     showRoomDetail: showRoomDetail,
     sendTradao: sendTradao,
-    sendCacao: sendCacao,
-    sendVietquat: sendVietquat,
+    sendLuctra: sendLuctra,
+    sendTradau: sendTradau,
     markMessageSeen: markMessageSeen,
     sendTypingOn: sendTypingOn,
     sendMessage: sendMessage
