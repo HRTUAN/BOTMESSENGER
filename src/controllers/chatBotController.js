@@ -245,16 +245,30 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "DETAIL_BANHHANH":
             await chatBotService.sendBanhhanh(sender_psid);
             break;
-        case "DETAIL_BANHHANH":
-            await chatBotService.sendBanhhanh(sender_psid);
+        case "BIRTHDAYCAKE":
+            await chatBotService.sendBirthday(sender_psid);
             break;
-        case "BACK_TO_MAIN_MENU":
-            await chatBotService.goBackToMainMenu(sender_psid);
+        case "DETAIL_WHIPPINGXOAI":
+            await chatBotService.sendWippingxoai(sender_psid);
             break;
-        case "BACK_TO_LUNCH_MENU":
-            await chatBotService.goBackToLunchMenu(sender_psid);
+        case "DETAIL_WHIPPINGDAU":
+            await chatBotService.sendWippingdau(sender_psid);
             break;
-
+        case "DETAIL_WHIPPINGPHUCBON":
+            await chatBotService.sendWippingphucbon(sender_psid);
+            break;
+        case "DETAIL_WHIPPINGPNHIETDOI":
+            await chatBotService.sendWippingnhietdoi(sender_psid);
+            break;
+        case "DETAIL_PISTACHIOS":
+            await chatBotService.sendPistachios(sender_psid);
+            break;
+        case "DETAIL_RED":
+            await chatBotService.sendRED(sender_psid);
+            break;
+        case "DETAIL_ENTREMET":
+            await chatBotService.sendEntremet(sender_psid);
+            break;
         case "yes":
             response = { text: "Thank you!" };
             callSendAPI(sender_psid, response);

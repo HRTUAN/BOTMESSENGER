@@ -32,7 +32,7 @@ let getFacebookUsername = (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response_first = { "text": `Chào mừng ${username} đến với La - Bánh và Trà\nRất vui vì có thể giúp bạn\nTôi là phần mềm trả lời tự động\nTrong lúc chưa có ai hỗ trợ bạn\nTôi có thể giúp bạn xem qua Menu` };
+            let response_first = { "text": `Chào mừng quý khách đến với La - Bánh và Trà\nRất vui vì có thể giúp bạn\nMình là phần mềm trả lời tự động\nTrong lúc chưa có ai hỗ trợ bạn\nMình có thể giúp bạn xem qua Menu` };
             let response_second = {
                 "attachment": {
                     "type": "template",
@@ -56,8 +56,8 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "ĐỊA CHỈ QUÁN",
-                                        "payload": "LOCATION_PUB",
+                                        "title": "BÁNH SINH NHẬT",
+                                        "payload": "BIRTHDAYCAKE",
                                     }
 
                                 ],
@@ -333,6 +333,125 @@ let sendCake = (sender_psid) => {
                                         "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
                                         "title": "ẤN VÀO NHÉ",
                                     }
+                                ],
+                            },
+                        ]
+                    }
+                }
+            };
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendBirthday = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "Whipping trà xoài dừa",
+                                "image_url": "https://i.postimg.cc/7YFLwZYp/z3994494406887-ca6d8bda3cc2f8640dba830c3bdc3e27.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_WHIPPINGXOAI ",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Whipping vị dâu panna cotta",
+                                "image_url": "https://i.postimg.cc/zGhFGvwW/z3994493199626-7f83419be1e684545dae0ebd6a053f05.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_WHIPPINGDAU",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Whipping vị vải thiều hoa hồng phúc bồn tử",
+                                "image_url": "https://i.postimg.cc/ZRvwpHp7/z3994488975569-1f66a6145486e7281629a6ec7481ac38.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_WHIPPINGPHUCBON",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Whipping vị thiên đường nhiệt đới",
+                                "image_url": "https://i.postimg.cc/Zqp9Ny0P/z3994487580375-98b8fd5591880ecbfdb662489cdd6c75.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_WHIPPINGPNHIETDOI",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Pistachios hạt dẻ cười",
+                                "image_url": "https://i.postimg.cc/tT6LppS4/z3994635115779-19e1bc311c48ec02b0d0fd7aadf6bf7f.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_PISTACHIOS",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Red velvet",
+                                "image_url": "https://i.postimg.cc/zvbYLTG8/z3994407841780-988b93fb769c987de127492a15535849.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_RED",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Entremet",
+                                "image_url": "https://i.postimg.cc/02j0wcvp/z3994504644239-27e6ba18af9836355f4b0c2f896dc1e0.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_ENTREMET",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "XEM THÊM CÁC MENU",
+                                "subtitle": "Full menu bánh và nước",
+                                "image_url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "BÁNH ĂN VẶT",
+                                        "payload": "SENDCAKE",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "MENU NƯỚC",
+                                        "payload": "SENDDRINK",
+                                    }
+
                                 ],
                             },
                         ]
@@ -1030,295 +1149,61 @@ let sendBanhga = (sender_psid) => {
     });
 };
 
-let handleReserveTable = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let username = await getFacebookUsername(sender_psid);
-            let response = { text: `Hi ${username}, What time and date you would like to reserve a table ?` };
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response);
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
-let handleShowRooms = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "generic",
-                        "elements": [
-                            {
-                                "title": "Phòng tiệc gia đình",
-                                "subtitle": "Phù hợp cho các gia đình nhỏ từ 5 đến 8 người",
-                                "image_url": "https://conbuom.vn/wp-content/uploads/2021/06/thiet-ke-phong-vip-nha-hang1-700x394.jpg",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "XEM CHI TIẾT PHÒNG",
-                                        "payload": "SHOW_ROOM_DETAIL",
-                                    }
-                                ],
-                            },
-
-                            {
-                                "title": "Phòng tiệc cỡ lón",
-                                "subtitle": "Tổ chức sinh nhật, party, sức chứa lên tới 20 người",
-                                "image_url": "https://1.bp.blogspot.com/-D_JuTYRnDTo/XykXMIE-3YI/AAAAAAAAAYk/yNe4rqaowJoTSa4tHInMUOBBg-0mcwlEACPcBGAYYCw/w1200-h630-p-k-no-nu/phong-vip-tiep-khach-sang-trong-moi-la-anh11.jpg",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "XEM CHI TIẾT PHÒNG",
-                                        "payload": "SHOW_ROOM_DETAIL",
-                                    }
-                                ],
-                            },
-
-                            {
-                                "title": "Phòng tiệc công ty",
-                                "subtitle": "Sức chưa lên đến 45 người, dành cho những dịp liên hoan công ty",
-                                "image_url": "http://hoaanvien.com.vn/images/VipRoom/Vip5.jpg",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "XEM CHI TIẾT PHÒNG",
-                                        "payload": "SHOW_ROOM_DETAIL",
-                                    }
-                                ],
-                            },
-
-                            {
-                                "title": "Trở lại",
-                                "image_url": " https://bit.ly/imageToSend",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "QUAY LẠI MENU CHÍNH",
-                                        "payload": "BACK_TO_MAIN_MENU",
-                                    },
-                                    {
-                                        "type": "web_url",
-                                        "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                        "title": "ĐẶT BÀN",
-                                        "webview_height_ratio": "tall",
-                                        "messenger_extensions": true //fall: open new tab
-                                    }
-                                ],
-                            }
-                        ]
-                    }
-                }
-            };
-
-            //send a welcome message
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response);
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
-let sendMessageAskingQuality = (sender_id) => {
-    let request_body = {
-        "recipient": {
-            "id": sender_id
-        },
-        "messaging_type": "RESPONSE",
-        "message": {
-            "text": "Bữa tiệc của bạn gồm bao nhiêu người?",
-            "quick_replies": [
-                {
-                    "content_type": "text",
-                    "title": "1-2",
-                    "payload": "SMALL",
-                }, {
-                    "content_type": "text",
-                    "title": "2-5",
-                    "payload": "MEDIUM",
-                },
-                {
-                    "content_type": "text",
-                    "title": "more than 5",
-                    "payload": "LARGE",
-                }
-            ]
-        }
-    };
-
-    // Send the HTTP request to the Messenger Platform
-    request({
-        "uri": "https://graph.facebook.com/v6.0/me/messages",
-        "qs": { "access_token": PAGE_ACCESS_TOKEN },
-        "method": "POST",
-        "json": request_body
-    }, (err, res, body) => {
-        if (!err) {
-            console.log('message sent!')
-        } else {
-            console.error("Unable to send message:" + err);
-        }
-    });
-};
-
-let sendMessageAskingPhoneNumber = (sender_id) => {
-    let request_body = {
-        "recipient": {
-            "id": sender_id
-        },
-        "messaging_type": "RESPONSE",
-        "message": {
-            "text": "Cám ơn! Xin vui lòng cung cấp số điện thoại của bạn để chúng tôi có thể liên lạc ?",
-            "quick_replies": [
-                {
-                    "content_type": "user_phone_number",
-                }
-            ]
-        }
-    };
-
-    // Send the HTTP request to the Messenger Platform
-    request({
-        "uri": "https://graph.facebook.com/v6.0/me/messages",
-        "qs": { "access_token": PAGE_ACCESS_TOKEN },
-        "method": "POST",
-        "json": request_body
-    }, (err, res, body) => {
-        if (!err) {
-            console.log('message sent!')
-        } else {
-            console.error("Unable to send message:" + err);
-        }
-    });
-};
-
-let sendMessageDoneReserveTable = async (sender_id) => {
-    try {
-        let response = {
-            "attachment": {
-                "type": "image",
-                "payload": {
-                    "url": "https://bit.ly/giftDonalTrump"
-                }
-            }
-        };
-        await sendTypingOn(sender_id);
-        await sendMessage(sender_id, response);
-
-        //get facebook username
-        let username = await getFacebookUsername(sender_id);
-
-        //send another message
-        let response2 = {
-            "attachment": {
-                "type": "template",
-                "payload": {
-                    "template_type": "button",
-                    "text": `Done! \nOur reservation team will contact you as soon as possible ${username}.\n \nWould you like to check our Main Menu?`,
-                    "buttons": [
-                        {
-                            "type": "postback",
-                            "title": "SHOW MAIN MENU",
-                            "payload": "MAIN_MENU"
-                        },
-                        {
-                            "type": "phone_number",
-                            "title": "☎ HOT LINE",
-                            "payload": "+911911"
-                        },
-                        {
-                            "type": "postback",
-                            "title": "START OVER",
-                            "payload": "RESTART_CONVERSATION"
-                        }
-                    ]
-                }
-            }
-        };
-        await sendTypingOn(sender_id);
-        await sendMessage(sender_id, response2);
-    } catch (e) {
-        console.log(e);
-    }
-};
-
-let sendNotificationToTelegram = (user) => {
-    return new Promise((resolve, reject) => {
-        try {
-            let request_body = {
-                chat_id: process.env.TELEGRAM_GROUP_ID,
-                parse_mode: "HTML",
-                text: `
-| --- <b>A new reservation</b> --- |
-| ------------------------------------------------|
-| 1. Username: <b>${user.name}</b>   |
-| 2. Phone number: <b>${user.phoneNumber}</b> |
-| 3. Time: <b>${user.time}</b> |
-| 4. Quantity: <b>${user.quantity}</b> |
-| 5. Created at: ${user.createdAt} |
-| ------------------------------------------------ |                           
-      `
-            };
-
-            // Send the HTTP request to the Telegram
-            request({
-                "uri": `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`,
-                "method": "POST",
-                "json": request_body
-            }, (err, res, body) => {
-                if (!err) {
-                    resolve('done!')
-                } else {
-                    reject("Unable to send message:" + err);
-                }
-            });
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
-let sendMessageDefaultForTheBot = (sender_psid) => {
+let sendWippingxoai = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Xin cám ơn, Chúng tôi sẽ liên lại với bạn sớm nhất \n Bạn có thể thử chat lại vơi tôi hoặc đặt bàn lại.\n\nVideo này có thể sẽ giúp bạn 😉"
+                "text": "Từ 450k đến 550k\nCho các size từ 14 đến 16"
             };
-            //send a media template
             let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/7YFLwZYp/z3994494406887-ca6d8bda3cc2f8640dba830c3bdc3e27.jpg"
+                    }
+                }
+            };
+            let response3 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
-                        "template_type": "media",
-                        "elements": [
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
                             {
-                                "media_type": "video",
-                                "url": "https://www.youtube.com/watch?v=AkNyiaP8C9k",
-                                "buttons": [
-                                    {
-                                        "type": "web_url",
-                                        "url": "https://www.youtube.com/",
-                                        "title": "Xem thêm!"
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "Bắt đầu lại cuộc trò chuyện",
-                                        "payload": "RESTART_CONVERSATION"
-                                    }
-                                ]
-                            }
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
                         ]
                     }
                 }
             };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
+
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
+
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -1326,51 +1211,391 @@ let sendMessageDefaultForTheBot = (sender_psid) => {
     });
 };
 
-let showRoomDetail = (sender_psid) => {
+let sendWippingdau = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
+                "text": "Từ 450k đến 550k\nCho các size từ 14 đến 16"
+            };
+            let response2 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": URL_SHOW_ROOM_GIF
+                        "url": "https://i.postimg.cc/zGhFGvwW/z3994493199626-7f83419be1e684545dae0ebd6a053f05.jpg"
                     }
                 }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
+                        ]
+                    }
+                }
+            };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendWippingphucbon = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Từ 480k đến 550k\nCho các size từ 14 đến 16"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/ZRvwpHp7/z3994488975569-1f66a6145486e7281629a6ec7481ac38.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
+                        ]
+                    }
+                }
+            };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendWippingnhietdoi = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Từ 500k đến 600k\nCho các size từ 14 đến 16"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/Zqp9Ny0P/z3994487580375-98b8fd5591880ecbfdb662489cdd6c75.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
+                        ]
+                    }
+                }
+            };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendPistachios = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Từ 150k đến 700k\nCho các size từ 10 đến 24"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/8cVxC99B/z3994635126328-e4e97e89d29b0ad56014db5d1926e4dd.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
+                        ]
+                    }
+                }
+            };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendRED = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Từ 180k đến 750k\nCho các size từ 10 đến 24"
+            };
+            let response2 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/zvbYLTG8/z3994407841780-988b93fb769c987de127492a15535849.jpg"
+                    }
+                }
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
+                        ]
+                    }
+                }
+            };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendEntremet = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Từ 180k đến 750k\nCho các size từ 10 đến 24"
             };
             let response2 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
-                        "template_type": "button",
-                        "text": `Các phòng tiệc Vip phù hợp cho bạn tổ chức tiệc, sinh nhật, liên hoan, sức chứa từ 8 đến 40 người`,
-                        "buttons": [
+                        "template_type": "generic",
+                        "elements": [
                             {
-                                "type": "postback",
-                                "title": "HIỂN THỊ MENU CHÍNH",
-                                "payload": "MAIN_MENU"
+                                "title": "Mẫu entremet 1",
+                                "image_url": "https://i.postimg.cc/02j0wcvp/z3994504644239-27e6ba18af9836355f4b0c2f896dc1e0.jpg",
                             },
                             {
-                                "type": "web_url",
-                                "url": `${process.env.URl_WEB_VIEW_ORDER}`,
-                                "title": "ĐẶT BÀN",
-                                "webview_height_ratio": "tall",
-                                "messenger_extensions": true //fall: open new tab
-                            }
+                                "title": "Mẫu entremet 2",
+                                "image_url": "https://i.postimg.cc/BbY5z1TL/z3994504644270-6a707c1554346bfe15c07d7e44269ee0.jpg",
+                            },
+                            {
+                                "title": "Mẫu entremet 3",
+                                "image_url": "https://i.postimg.cc/MZdYHgC6/z3994504644276-6d50dc3b079272a026236644e261af1a.jpg",
+                            },
+
                         ]
                     }
                 }
             };
+            let response3 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT ",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU BIRTHDAY CAKE ",
+                                "payload": "BIRTHDAYCAKE"
+                            },
+                        ]
+                    }
+                }
+            };
+            let response4 = {
+                "text": "Để đảm bảo chất lượng bánh tốt nhất, bên mình chỉ làm khi có khách đặt.\nBạn chờ một lát để chúng mình vào xác nhận nhé."
+            };
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
+
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
 
-            resolve("done!");
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
         } catch (e) {
             reject(e);
         }
-    })
+    });
 };
 
 let sendMessage = (sender_psid, response) => {
@@ -1477,18 +1702,18 @@ module.exports = {
     sendPanna: sendPanna,
     sendBanhhanh: sendBanhhanh,
     sendBanhga: sendBanhga,
-    handleReserveTable: handleReserveTable,
-    handleShowRooms: handleShowRooms,
-    sendMessageAskingQuality: sendMessageAskingQuality,
-    sendMessageAskingPhoneNumber: sendMessageAskingPhoneNumber,
-    sendMessageDoneReserveTable: sendMessageDoneReserveTable,
-    sendNotificationToTelegram: sendNotificationToTelegram,
-    sendMessageDefaultForTheBot: sendMessageDefaultForTheBot,
-    showRoomDetail: showRoomDetail,
     sendTradao: sendTradao,
     sendLuctra: sendLuctra,
     sendTradau: sendTradau,
     markMessageSeen: markMessageSeen,
     sendTypingOn: sendTypingOn,
-    sendMessage: sendMessage
+    sendMessage: sendMessage,
+    sendBirthday: sendBirthday,
+    sendWippingxoai: sendWippingxoai,
+    sendWippingdau: sendWippingdau,
+    sendWippingphucbon: sendWippingphucbon,
+    sendWippingnhietdoi: sendWippingnhietdoi,
+    sendPistachios: sendPistachios,
+    sendRED: sendRED,
+    sendEntremet: sendEntremet,
 };
