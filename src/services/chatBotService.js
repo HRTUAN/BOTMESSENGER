@@ -51,7 +51,7 @@ let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
                                     },
                                     {
                                         "type": "postback",
-                                        "title": "ĐỒ ĂN - BÁNH",
+                                        "title": "BÁNH ĂN VẶT",
                                         "payload": "SENDCAKE",
                                     },
                                     {
@@ -91,13 +91,6 @@ let SENDDRINK = (sender_psid) => {
                     "payload": {
                         "template_type": "generic",
                         "elements": [
-                            {
-                                "title": "Thực Đơn đồ uống",
-                                "subtitle": "Vuốt qua để xem chi tiết",
-                                "image_url": "https://nguyenlieuphachemientay.com/wp-content/uploads/2020/09/Diem-danh-15-loai-do-uong-hot-nhat-nam-co-vy.jpg",
-
-                            },
-
                             {
                                 "title": "Bạc xỉu",
                                 "subtitle": "PRICE: 30K/CỐC",
@@ -197,7 +190,7 @@ let SENDDRINK = (sender_psid) => {
                             },
                             {
                                 "title": "Topping các loại",
-                                "subtitle": "PRICE: 10K/Topping",
+                                "subtitle": "PRICE: 10k/cốc Topping",
                                 "image_url": "https://i.postimg.cc/C5VC2wpp/ghe-tra-sua-fu-tea-thuong-thuc-do-uong-ngon-bo-re-noi-tieng-5-1662698860.jpg",
                                 "buttons": [
                                     {
@@ -245,7 +238,7 @@ let sendCake = (sender_psid) => {
                         "elements": [
                             {
                                 "title": "Panna cotta chanh leo, dâu tây",
-                                "image_url": "https://matonghungyen.com/wp-content/uploads/2013/06/pannacotta.jpg",
+                                "image_url": "https://i.postimg.cc/Gh7QP18p/322474598-561429468781806-8510852521872175949-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -256,7 +249,7 @@ let sendCake = (sender_psid) => {
                             },
                             {
                                 "title": "Bánh hành kéo sợi",
-                                "image_url": "https://media1.nguoiduatin.vn/thumb_x1280x857/media/ngac-kim-giang/2022/01/15/tet-nay-tro-tai-lam-banh-hanh-pho-mai-keo-soi-dai-khach.jpg",
+                                "image_url": "https://i.postimg.cc/Hk6f7KH0/320668160-481334250792831-6271783850233790750-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -267,8 +260,8 @@ let sendCake = (sender_psid) => {
                             },
 
                             {
-                                "title": "Bánh ống ruốc gà",
-                                "image_url": "https://i.ytimg.com/vi/Ra0-XzAyv8w/maxresdefault.jpg",
+                                "title": "Bánh cuộn ruốc gà",
+                                "image_url": "https://i.postimg.cc/KzNyYY9f/320346876-712111986906073-3657762382295760032-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -280,7 +273,7 @@ let sendCake = (sender_psid) => {
 
                             {
                                 "title": "Bông lan trứng muối",
-                                "image_url": "https://cdn.cet.edu.vn/wp-content/uploads/2019/11/banh-bong-lan-trung-muoi.jpg",
+                                "image_url": "https://i.postimg.cc/CKw0pD75/319626523-194557019768712-6203730865110329701-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
@@ -291,47 +284,135 @@ let sendCake = (sender_psid) => {
                             },
                             {
                                 "title": "Red velvet",
-                                "image_url": "https://cafedelites.com/wp-content/uploads/2018/05/Red-Velvet-Cake-IMAGE-43.jpg",
+                                "image_url": "https://i.postimg.cc/zvbYLTG8/z3994407841780-988b93fb769c987de127492a15535849.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "XEM CHI TIẾT",
-                                        "payload": "DETAIL_RED",
+                                        "payload": "DETAIL_REDV",
                                     }
                                 ],
                             },
                             {
-                                "title": "Phomai xoài",
-                                "image_url": "https://cdn.mediamart.vn/images/news/tr-tai-kheo-tay-lam-banh-phomai-xoai-khong-cn-dung-lo-nung_2f55e910.jpg",
+                                "title": "Phomai xoài miếng",
+                                "image_url": "https://i.postimg.cc/253799Wx/321512767-884181089588668-6575553954568128040-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "XEM CHI TIẾT",
-                                        "payload": "DETAIL_PHOMAI",
+                                        "payload": "DETAIL_PHOMAIXOAI",
                                     }
                                 ],
                             },
                             {
-                                "title": "Hạt dẻ cười",
-                                "image_url": "https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2015/02/Cherry-and-pistachio-Biscotti-recipe.jpg",
+                                "title": "Phomai dẻ cười miếng",
+                                "image_url": "https://i.postimg.cc/QMbZStp7/321660964-545204400858066-6505721763871901878-n.jpg",
                                 "buttons": [
                                     {
                                         "type": "postback",
                                         "title": "XEM CHI TIẾT",
-                                        "payload": "DETAIL_PHOMAI",
+                                        "payload": "DETAIL_PHOMAIHATDE",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Su kem sing",
+                                "image_url": "https://i.postimg.cc/QMbZStp7/321660964-545204400858066-6505721763871901878-n.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_SUKEM",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Crepe sầu",
+                                "image_url": "https://i.postimg.cc/4dytxYPb/321690149-867592840982419-8055730569751224248-n.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_CREPESAU",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Vẫn còn nhiều sản phẩm ở trang sau",
+                                "image_url": "https://i.postimg.cc/kgkYPdy5/cach-lam-bento-cake-banh-kem-mini-han-quoc-cuc-de-thuong-gay-avt-1200x676.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM THÊM",
+                                        "payload": "DETAIL_CONTINUE",
+                                    }
+                                ],
+                            },
+                        ]
+                    }
+                }
+            };
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let Continue = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "Bánh tart trứng",
+                                "image_url": "https://i.postimg.cc/nzTXBpRV/321354437-1254209878466152-3596494190344801006-n.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_TARTTRUNG",
+                                    }
+                                ],
+                            },
+                            {
+                                "title": "Bánh cookies",
+                                "image_url": "https://i.postimg.cc/TYQKprN8/319641579-611737404090321-7159056322602899857-n.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_COOKIES",
                                     }
                                 ],
                             },
 
                             {
-                                "title": "XEM TOÀN BỘ MENU",
-                                "subtitle": "Full menu bánh và nước",
-                                "image_url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
+                                "title": "Bánh mì mè đen hàn quốc",
+                                "image_url": "https://i.postimg.cc/44W5Thvd/320431941-5575852612512149-4195241782591619984-n.jpg",
                                 "buttons": [
                                     {
-                                        "type": "web_url",
-                                        "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                        "title": "ẤN VÀO NHÉ",
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_MEDENHANQUOC",
+                                    }
+                                ],
+                            },
+
+                            {
+                                "title": "Thịt lợn khô homemade 100gr",
+                                "image_url": "https://i.postimg.cc/Kjt3jwkx/z3994463160208-9bf1a690e738827d883dc35543ba0391-1.jpg",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "XEM CHI TIẾT",
+                                        "payload": "DETAIL_LONKHO",
                                     }
                                 ],
                             },
@@ -965,38 +1046,29 @@ let sendPanna = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Panna cotta chanh leo\n 40.000 đồng/miếng"
+                "text": "Panna cotta chanh leo, dâu tây\n 20.000 đồng/1 hộp"
             };
             let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "http://cdn.tgdd.vn/Files/2021/07/26/1370853/bo-tui-cach-lam-panna-cotta-chanh-day-thom-lung-chua-chua-ngot-ngot-ai-cung-me-202112200928180251.jpg"
+                        "url": "https://i.postimg.cc/Gh7QP18p/322474598-561429468781806-8510852521872175949-n.jpg"
                     }
                 }
-            };
-
-            let response3 = {
-                "text": "Panna cotta dâu tây\n 50.000 đồng/miếng"
             };
             let response4 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://monngon.tv/wp-content/uploads/2020/09/41efa91ebc4c5c3e6a02d35a9879f0df-cach-lam-panna-cotta-dau-tay-nho.jpg"
-                    }
-                }
-            };
-            let response5 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "text": `Xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "MENU BÁNH ",
+                                "title": "BÁNH ĂN VẶT",
                                 "payload": "SENDCAKE"
                             },
                             {
@@ -1005,9 +1077,9 @@ let sendPanna = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
                             }
                         ]
                     }
@@ -1022,12 +1094,9 @@ let sendPanna = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-            await sendTypingOn(sender_psid);
 
+            await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
-            await sendTypingOn(sender_psid);
-
-            await sendMessage(sender_psid, response5);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -1039,26 +1108,29 @@ let sendBanhhanh = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Bánh hành kéo sợi\n 70.000 đồng/túi/10 miếng"
+                "text": "Bánh hành kéo sợi\n 50.000 đồng/1 hộp"
             };
             let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://cf.shopee.vn/file/7343063c62aedea24d5bb4fb233f2160"
+                        "url": "https://i.postimg.cc/Hk6f7KH0/320668160-481334250792831-6271783850233790750-n.jpg"
                     }
                 }
             };
-            let response3 = {
+            let response4 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "text": `Xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "MENU BÁNH ",
+                                "title": "BÁNH ĂN VẶT",
                                 "payload": "SENDCAKE"
                             },
                             {
@@ -1067,9 +1139,9 @@ let sendBanhhanh = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
                             }
                         ]
                     }
@@ -1084,7 +1156,9 @@ let sendBanhhanh = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
+
             await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -1096,26 +1170,29 @@ let sendBanhga = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Bánh ống ruốc gà\n 10.000 đồng/ống\nMua 5 ống chỉ còn 45.000 đồng"
+                "text": "Bánh cuộn ruốc gà\n 50.000 đồng/1 túi 6 cái"
             };
             let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
                 "attachment": {
                     "type": "image",
                     "payload": {
-                        "url": "https://i.ytimg.com/vi/Ra0-XzAyv8w/maxresdefault.jpg"
+                        "url": "https://i.postimg.cc/KzNyYY9f/320346876-712111986906073-3657762382295760032-n.jpg"
                     }
                 }
             };
-            let response3 = {
+            let response4 = {
                 "attachment": {
                     "type": "template",
                     "payload": {
                         "template_type": "button",
-                        "text": `Xem toàn bộ menu hoặc xem menu Bánh?`,
+                        "text": `Xem thêm các Menu khác?`,
                         "buttons": [
                             {
                                 "type": "postback",
-                                "title": "MENU BÁNH ",
+                                "title": "BÁNH ĂN VẶT",
                                 "payload": "SENDCAKE"
                             },
                             {
@@ -1124,9 +1201,9 @@ let sendBanhga = (sender_psid) => {
                                 "payload": "SENDDRINK"
                             },
                             {
-                                "type": "web_url",
-                                "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                                "title": "XEM TOÀN BỘ MENU"
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
                             }
                         ]
                     }
@@ -1141,7 +1218,629 @@ let sendBanhga = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
+
             await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendBonglan = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bông lan trứng muối\n 50.000 đồng/1 hộp"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/CKw0pD75/319626523-194557019768712-6203730865110329701-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendRedv = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Red velvet miếng\n 40.000 đồng/1 Miếng"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/zvbYLTG8/z3994407841780-988b93fb769c987de127492a15535849.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendPhomaixoai = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Phomai xoài miếng\n 40.000 đồng/1 Miếng"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/253799Wx/321512767-884181089588668-6575553954568128040-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendPhomaihatde = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Phomai dẻ cười miếng\n 40.000 đồng/1 Miếng"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/QMbZStp7/321660964-545204400858066-6505721763871901878-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendXukem = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bánh Su kem sing\n 50.000 đồng/1 Túi 5 Bánh"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/c4FSQ6B8/320245704-680578116862159-7384754460312516384-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendCrep = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bánh Crepe sầu\n 60.000 đồng/1 Hộp 4 Bánh"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/4dytxYPb/321690149-867592840982419-8055730569751224248-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendTarttrung = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bánh tart trứng\n 15.000 đồng/1 Bánh"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/nzTXBpRV/321354437-1254209878466152-3596494190344801006-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendCookies = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bánh Cookies\n 25.000 đồng/ Túi 5 cái"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/TYQKprN8/319641579-611737404090321-7159056322602899857-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendMedenhan = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Bánh mì mè đen hàn quốc\n 15.000 đồng/ Cái"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/44W5Thvd/320431941-5575852612512149-4195241782591619984-n.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendLonkho = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Thịt lợn khô homemade\n 65.000 đồng/ 1 Túi(100 gram)"
+            };
+            let response2 = {
+                "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
+            };
+            let response3 = {
+                "attachment": {
+                    "type": "image",
+                    "payload": {
+                        "url": "https://i.postimg.cc/Kjt3jwkx/z3994463160208-9bf1a690e738827d883dc35543ba0391-1.jpg"
+                    }
+                }
+            };
+            let response4 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "button",
+                        "text": `Xem thêm các Menu khác?`,
+                        "buttons": [
+                            {
+                                "type": "postback",
+                                "title": "BÁNH ĂN VẶT",
+                                "payload": "SENDCAKE"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "MENU ĐỒ UỐNG ",
+                                "payload": "SENDDRINK"
+                            },
+                            {
+                                "type": "postback",
+                                "title": "BÁNH SINH NHẬT",
+                                "payload": "BIRTHDAYCAKE"
+                            }
+                        ]
+                    }
+                }
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response3);
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -1716,4 +2415,16 @@ module.exports = {
     sendPistachios: sendPistachios,
     sendRED: sendRED,
     sendEntremet: sendEntremet,
+    sendBonglan: sendBonglan,
+    sendRedv: sendRedv,
+    sendPhomaixoai: sendPhomaixoai,
+    sendPhomaihatde: sendPhomaihatde,
+    sendXukem: sendXukem,
+    sendCrep: sendCrep,
+    Continue: Continue,
+    sendTarttrung: sendTarttrung,
+    sendCookies: sendCookies,
+    sendMedenhan: sendMedenhan,
+    sendLonkho: sendLonkho
+
 };

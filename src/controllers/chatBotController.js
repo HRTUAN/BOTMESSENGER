@@ -239,12 +239,40 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "DETAIL_BANHGA":
             await chatBotService.sendBanhga(sender_psid);
             break;
-        case "DETAIL_BANHHANH":
-            await chatBotService.sendBanhhanh(sender_psid);
+        case "DETAIL_BONGLAN":
+            await chatBotService.sendBonglan(sender_psid);
             break;
-        case "DETAIL_BANHHANH":
-            await chatBotService.sendBanhhanh(sender_psid);
+        case "DETAIL_REDV":
+            await chatBotService.sendRedv(sender_psid);
             break;
+        case "DETAIL_PHOMAIXOAI":
+            await chatBotService.sendPhomaixoai(sender_psid);
+            break;
+        case "DETAIL_PHOMAIHATDE":
+            await chatBotService.sendPhomaihatde(sender_psid);
+            break;
+        case "DETAIL_SUKEM":
+            await chatBotService.sendXukem(sender_psid);
+            break;
+        case "DETAIL_CREPESAU":
+            await chatBotService.sendCrep(sender_psid);
+            break;
+        case "DETAIL_CONTINUE":
+            await chatBotService.Continue(sender_psid);
+            break;
+        case "DETAIL_TARTTRUNG":
+            await chatBotService.sendTarttrung(sender_psid);
+            break;
+        case "DETAIL_COOKIES":
+            await chatBotService.sendCookies(sender_psid);
+            break;
+        case "DETAIL_MEDENHANQUOC":
+            await chatBotService.sendMedenhan(sender_psid);
+            break;
+        case "DETAIL_LONKHO":
+            await chatBotService.sendLonkho(sender_psid);
+            break;
+
         case "BIRTHDAYCAKE":
             await chatBotService.sendBirthday(sender_psid);
             break;
