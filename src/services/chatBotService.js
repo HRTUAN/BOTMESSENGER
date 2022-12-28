@@ -32,7 +32,7 @@ let getFacebookUsername = (sender_psid) => {
 let sendResponseWelcomeNewCustomer = (username, sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let response_first = { "text": `Chào mừng quý khách đến với La - Bánh và Trà\nRất vui vì có thể giúp bạn\nMình là phần mềm trả lời tự động\nTrong lúc chưa có ai hỗ trợ bạn\nMình có thể giúp bạn xem qua Menu` };
+            let response_first = { "text": `Chào mừng quý khách đến với La - Bánh và Trà` };
             let response_second = {
                 "attachment": {
                     "type": "template",
@@ -1588,7 +1588,7 @@ let sendWippingxoai = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 450k đến 550k\nCho các size từ 14 đến 16"
+                "text": "Whipping trà xoài dừa\nTừ 450k đến 550k\nCho các size từ 14 đến 16"
             };
             let response3 = {
                 "attachment": {
@@ -1639,7 +1639,7 @@ let sendWippingdau = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 450k đến 550k\nCho các size từ 14 đến 16"
+                "text": "Whipping vị dâu panna cotta\nTừ 450k đến 550k\nCho các size từ 14 đến 16"
             };
             let response3 = {
                 "attachment": {
@@ -1690,7 +1690,7 @@ let sendWippingphucbon = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 480k đến 550k\nCho các size từ 14 đến 16"
+                "text": "Whipping vị vải thiều hoa hồng phúc bồn tử\nTừ 480k đến 550k\nCho các size từ 14 đến 16"
             };
             let response3 = {
                 "attachment": {
@@ -1741,7 +1741,7 @@ let sendWippingnhietdoi = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 500k đến 600k\nCho các size từ 14 đến 16"
+                "text": "Whipping vị thiên đường nhiệt đới\nTừ 500k đến 600k\nCho các size từ 14 đến 16"
             };
             let response3 = {
                 "attachment": {
@@ -1792,7 +1792,7 @@ let sendPistachios = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 150k đến 700k\nCho các size từ 10 đến 24"
+                "text": "Pistachios hạt dẻ cười\nTừ 150k đến 700k\nCho các size từ 10 đến 24"
             };
             let response3 = {
                 "attachment": {
@@ -1843,7 +1843,7 @@ let sendRED = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 180k đến 750k\nCho các size từ 10 đến 24"
+                "text": "Red velvet\nTừ 180k đến 750k\nCho các size từ 10 đến 24"
             };
             let response3 = {
                 "attachment": {
@@ -1894,7 +1894,7 @@ let sendEntremet = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Từ 180k đến 750k\nCho các size từ 10 đến 24"
+                "text": "Entremet\nTừ 180k đến 750k\nCho các size từ 10 đến 24"
             };
             let response2 = {
                 "attachment": {
@@ -2077,7 +2077,7 @@ let sendMessageDefaultForTheBot = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let response1 = {
-                "text": "Xin chào, Mình là phần mềm trả lời tự động\n Trong thời gian chờ đợi, mình sẽ giúp bạn.\n\nBạn có thể xem Menu của quán mình nhé😉"
+                "text": "Chào mừng quý khách đến với La - Bánh và Trà.\nBạn vui lòng chờ 1 chút nhé😉\n Cửa hàng mình sẽ có người trả lời bạn ngay ạ"
             };
             //send a media template
             let response2 = {
