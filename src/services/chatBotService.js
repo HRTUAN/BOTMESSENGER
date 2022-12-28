@@ -98,7 +98,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_BACXIU",
                                     }
                                 ],
@@ -110,7 +110,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_CAFEMUOI",
                                     }
                                 ],
@@ -122,7 +122,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_CAFECOTDUA",
                                     }
                                 ],
@@ -134,7 +134,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_TRAXOAI",
                                     }
                                 ],
@@ -146,7 +146,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_TRADAO",
                                     }
                                 ],
@@ -158,7 +158,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_LUCTRA",
                                     }
                                 ],
@@ -170,7 +170,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_TRADAU",
                                     }
                                 ],
@@ -182,7 +182,7 @@ let SENDDRINK = (sender_psid) => {
                                 "buttons": [
                                     {
                                         "type": "postback",
-                                        "title": "CHI TIẾT",
+                                        "title": "ĐẶT HÀNG",
                                         "payload": "DETAIL_TRACHANH",
                                     }
                                 ],
@@ -558,14 +558,6 @@ let sendBacxiu = (sender_psid) => {
             let response1 = {
                 "text": "Bạc xỉu đậm chất\n30.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Yqw132tp/5-cach-pha-bac-xiu-cuc-ngon-hap-dan-nhu-quan-ca-phe-tai-nha-202203171037441306.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -583,11 +575,6 @@ let sendBacxiu = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
                         ]
                     }
                 }
@@ -595,9 +582,6 @@ let sendBacxiu = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -660,14 +644,6 @@ let sendCafeCotdua = (sender_psid) => {
             let response1 = {
                 "text": "Cafe cốt dừa thơm ngon\n 40.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/RVRXJJwr/tu-pha-che-ca-phe-cot-dua-cuc-thom-ngon-va-hap-dan-ngay-tai-nha-nd0.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -684,12 +660,7 @@ let sendCafeCotdua = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
-                            },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
+                            }
                         ]
                     }
                 }
@@ -697,9 +668,6 @@ let sendCafeCotdua = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -716,14 +684,6 @@ let sendcafeMuoi = (sender_psid) => {
             let response1 = {
                 "text": "Cafe Muối thơm béo\n 30.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Gph0s14K/cach-pha-cafe-muoi-1.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -740,12 +700,7 @@ let sendcafeMuoi = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
-                            },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
+                            }
                         ]
                     }
                 }
@@ -772,14 +727,6 @@ let sendTraxoai = (sender_psid) => {
             let response1 = {
                 "text": "Trà xoài nha đam thanh nhiệt\n 45.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/vZKjD6dY/cach-lam-tra-xoai-3.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -796,12 +743,7 @@ let sendTraxoai = (sender_psid) => {
                                 "type": "postback",
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
-                            },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
+                            }
                         ]
                     }
                 }
@@ -809,9 +751,6 @@ let sendTraxoai = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -828,14 +767,6 @@ let sendTradao = (sender_psid) => {
             let response1 = {
                 "text": "Trà đào cam xả\n 45.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://horecavn.com/uploads/images/bai-viet/cong-thuc-tra-dao-cam-sa-chuan-vi-quan-2-.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -853,11 +784,6 @@ let sendTradao = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
                         ]
                     }
                 }
@@ -865,9 +791,6 @@ let sendTradao = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -884,14 +807,6 @@ let sendLuctra = (sender_psid) => {
             let response1 = {
                 "text": "Lục trà vải chanh\n 45.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Gp2ygHBy/travai2.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -909,11 +824,6 @@ let sendLuctra = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
                         ]
                     }
                 }
@@ -921,9 +831,6 @@ let sendLuctra = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -940,14 +847,6 @@ let sendTradau = (sender_psid) => {
             let response1 = {
                 "text": "Trà dâu Hana\n 45.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/YS1JVqJt/tra-dau-1.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -965,11 +864,6 @@ let sendTradau = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
                         ]
                     }
                 }
@@ -977,9 +871,6 @@ let sendTradau = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -996,14 +887,6 @@ let sendTrachanh = (sender_psid) => {
             let response1 = {
                 "text": "Trà tắc, trà chanh mát lạnh\n 20.000 đồng/cốc"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/NGZYsbwC/1608869384-403-thumbnail-width640height480.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -1021,11 +904,6 @@ let sendTrachanh = (sender_psid) => {
                                 "title": "MENU BÁNH ",
                                 "payload": "SENDCAKE"
                             },
-                            // {
-                            //     "type": "web_url",
-                            //     "url": "https://thietkegiahuy.com/wp-content/uploads/2021/03/thiet-ke-menu-bang-7.jpg",
-                            //     "title": "XEM TOÀN BỘ MENU"
-                            // }
                         ]
                     }
                 }
@@ -1033,9 +911,6 @@ let sendTrachanh = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response1);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
@@ -1055,14 +930,6 @@ let sendPanna = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Gh7QP18p/322474598-561429468781806-8510852521872175949-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1095,9 +962,6 @@ let sendPanna = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1117,14 +981,6 @@ let sendBanhhanh = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Hk6f7KH0/320668160-481334250792831-6271783850233790750-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1157,9 +1013,6 @@ let sendBanhhanh = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1179,14 +1032,6 @@ let sendBanhga = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/KzNyYY9f/320346876-712111986906073-3657762382295760032-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1219,9 +1064,6 @@ let sendBanhga = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1241,14 +1083,6 @@ let sendBonglan = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/CKw0pD75/319626523-194557019768712-6203730865110329701-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1281,9 +1115,6 @@ let sendBonglan = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1303,14 +1134,6 @@ let sendRedv = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/zvbYLTG8/z3994407841780-988b93fb769c987de127492a15535849.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1343,9 +1166,6 @@ let sendRedv = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1365,14 +1185,6 @@ let sendPhomaixoai = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/253799Wx/321512767-884181089588668-6575553954568128040-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1405,9 +1217,6 @@ let sendPhomaixoai = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1427,14 +1236,6 @@ let sendPhomaihatde = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/QMbZStp7/321660964-545204400858066-6505721763871901878-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1467,9 +1268,6 @@ let sendPhomaihatde = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1489,14 +1287,6 @@ let sendXukem = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/c4FSQ6B8/320245704-680578116862159-7384754460312516384-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1529,9 +1319,6 @@ let sendXukem = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1551,14 +1338,6 @@ let sendCrep = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/4dytxYPb/321690149-867592840982419-8055730569751224248-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1591,9 +1370,6 @@ let sendCrep = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1613,14 +1389,6 @@ let sendTarttrung = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/nzTXBpRV/321354437-1254209878466152-3596494190344801006-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1653,9 +1421,6 @@ let sendTarttrung = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1675,14 +1440,6 @@ let sendCookies = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/TYQKprN8/319641579-611737404090321-7159056322602899857-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1715,9 +1472,6 @@ let sendCookies = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1737,14 +1491,6 @@ let sendMedenhan = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/44W5Thvd/320431941-5575852612512149-4195241782591619984-n.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1777,9 +1523,6 @@ let sendMedenhan = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response2);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
@@ -1799,14 +1542,6 @@ let sendLonkho = (sender_psid) => {
             let response2 = {
                 "text": "Thực đơn ăn vặt chúng mình thay đổi theo ngày.\nBạn chờ 1 lát để chúng mình xác nhận xem còn hàng không nha."
             };
-            let response3 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Kjt3jwkx/z3994463160208-9bf1a690e738827d883dc35543ba0391-1.jpg"
-                    }
-                }
-            };
             let response4 = {
                 "attachment": {
                     "type": "template",
@@ -1841,9 +1576,6 @@ let sendLonkho = (sender_psid) => {
             await sendMessage(sender_psid, response2);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
@@ -1858,14 +1590,6 @@ let sendWippingxoai = (sender_psid) => {
             let response1 = {
                 "text": "Từ 450k đến 550k\nCho các size từ 14 đến 16"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/7YFLwZYp/z3994494406887-ca6d8bda3cc2f8640dba830c3bdc3e27.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -1900,13 +1624,10 @@ let sendWippingxoai = (sender_psid) => {
             await sendMessage(sender_psid, response1);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response4);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -1920,14 +1641,6 @@ let sendWippingdau = (sender_psid) => {
             let response1 = {
                 "text": "Từ 450k đến 550k\nCho các size từ 14 đến 16"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/zGhFGvwW/z3994493199626-7f83419be1e684545dae0ebd6a053f05.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -1962,13 +1675,10 @@ let sendWippingdau = (sender_psid) => {
             await sendMessage(sender_psid, response1);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response4);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -1982,14 +1692,6 @@ let sendWippingphucbon = (sender_psid) => {
             let response1 = {
                 "text": "Từ 480k đến 550k\nCho các size từ 14 đến 16"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/ZRvwpHp7/z3994488975569-1f66a6145486e7281629a6ec7481ac38.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -2024,13 +1726,10 @@ let sendWippingphucbon = (sender_psid) => {
             await sendMessage(sender_psid, response1);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response4);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -2044,14 +1743,6 @@ let sendWippingnhietdoi = (sender_psid) => {
             let response1 = {
                 "text": "Từ 500k đến 600k\nCho các size từ 14 đến 16"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/Zqp9Ny0P/z3994487580375-98b8fd5591880ecbfdb662489cdd6c75.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -2086,13 +1777,10 @@ let sendWippingnhietdoi = (sender_psid) => {
             await sendMessage(sender_psid, response1);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response4);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -2106,14 +1794,6 @@ let sendPistachios = (sender_psid) => {
             let response1 = {
                 "text": "Từ 150k đến 700k\nCho các size từ 10 đến 24"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/8cVxC99B/z3994635126328-e4e97e89d29b0ad56014db5d1926e4dd.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -2148,13 +1828,10 @@ let sendPistachios = (sender_psid) => {
             await sendMessage(sender_psid, response1);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response4);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -2168,14 +1845,6 @@ let sendRED = (sender_psid) => {
             let response1 = {
                 "text": "Từ 180k đến 750k\nCho các size từ 10 đến 24"
             };
-            let response2 = {
-                "attachment": {
-                    "type": "image",
-                    "payload": {
-                        "url": "https://i.postimg.cc/zvbYLTG8/z3994407841780-988b93fb769c987de127492a15535849.jpg"
-                    }
-                }
-            };
             let response3 = {
                 "attachment": {
                     "type": "template",
@@ -2210,13 +1879,10 @@ let sendRED = (sender_psid) => {
             await sendMessage(sender_psid, response1);
 
             await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
+            await sendMessage(sender_psid, response4);
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response3);
-
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response4);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -2294,6 +1960,22 @@ let sendEntremet = (sender_psid) => {
 
             await sendTypingOn(sender_psid);
             await sendMessage(sender_psid, response4);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
+let sendPhone = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Mọi người đặt bánh vui lòng liên hệ:\n096 911 99 17"
+            };
+
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
             resolve("done");
         } catch (e) {
             reject(e);
@@ -2391,6 +2073,56 @@ let markMessageSeen = (sender_psid) => {
     });
 };
 
+let sendMessageDefaultForTheBot = (sender_psid) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            let response1 = {
+                "text": "Xin chào, Mình là phần mềm trả lời tự động\n Trong thời gian chờ đợi, mình sẽ giúp bạn.\n\nBạn có thể xem Menu của quán mình nhé😉"
+            };
+            //send a media template
+            let response2 = {
+                "attachment": {
+                    "type": "template",
+                    "payload": {
+                        "template_type": "media",
+                        "template_type": "generic",
+                        "elements": [
+                            {
+                                "title": "La - Bánh và trà",
+                                "subtitle": " ",
+                                "buttons": [
+                                    {
+                                        "type": "postback",
+                                        "title": "ĐỒ UỐNG",
+                                        "payload": "SENDDRINK",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "BÁNH ĂN VẶT",
+                                        "payload": "SENDCAKE",
+                                    },
+                                    {
+                                        "type": "postback",
+                                        "title": "BÁNH SINH NHẬT",
+                                        "payload": "BIRTHDAYCAKE",
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            };
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response1);
+            await sendTypingOn(sender_psid);
+            await sendMessage(sender_psid, response2);
+            resolve("done");
+        } catch (e) {
+            reject(e);
+        }
+    });
+};
+
 module.exports = {
     getFacebookUsername: getFacebookUsername,
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
@@ -2429,6 +2161,8 @@ module.exports = {
     sendTarttrung: sendTarttrung,
     sendCookies: sendCookies,
     sendMedenhan: sendMedenhan,
-    sendLonkho: sendLonkho
+    sendLonkho: sendLonkho,
+    sendPhone: sendPhone,
+    sendMessageDefaultForTheBot: sendMessageDefaultForTheBot
 
 };

@@ -26,8 +26,7 @@ let setUpMessengerPlatform = (PAGE_ACCESS_TOKEN) => {
                             {
                                 "type": "postback",
                                 "title": "Điện thoại liên hệ",
-                                "url": "https://www.facebook.com/La-B%C3%A1nh-v%C3%A0-tr%C3%A0-101510912406657",
-                                "webview_height_ratio": "full"
+                                "payload": "PHONENUMBER"
                             },
                             {
                                 "type": "postback",

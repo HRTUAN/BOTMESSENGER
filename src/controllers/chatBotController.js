@@ -296,6 +296,9 @@ let handlePostback = async (sender_psid, received_postback) => {
         case "DETAIL_ENTREMET":
             await chatBotService.sendEntremet(sender_psid);
             break;
+        case "PHONENUMBER":
+            await chatBotService.sendPhone(sender_psid);
+            break;
         case "yes":
             response = { text: "Thank you!" };
             callSendAPI(sender_psid, response);
