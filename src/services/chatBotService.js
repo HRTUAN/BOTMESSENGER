@@ -2112,7 +2112,6 @@ module.exports = {
     sendCookies: sendCookies,
     sendMedenhan: sendMedenhan,
     sendLonkho: sendLonkho,
-    sendPhone: sendPhone,
-    sendMessageDefaultForTheBot: sendMessageDefaultForTheBot
+    sendPhone: sendPhone
 
 };
