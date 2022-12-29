@@ -139,12 +139,7 @@ let handleMessage = async (sender_psid, message) => {
         await homepageService.sendResponseThanks(sender_psid, locale);
     } else if (entity.name === "wit$bye") {
         await homepageService.sendResponseBye(sender_psid, locale);
-    } else {
-        //default reply
-        await chatBotService.sendMessageDefaultForTheBot(sender_psid);
     }
-
-    //handle attachment message
 };
 
 let handleMessageWithEntities = (message) => {

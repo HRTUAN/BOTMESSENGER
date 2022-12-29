@@ -2073,56 +2073,6 @@ let markMessageSeen = (sender_psid) => {
     });
 };
 
-let sendMessageDefaultForTheBot = (sender_psid) => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            let response1 = {
-                "text": "Chào mừng quý khách đến với La - Bánh và Trà.\nBạn vui lòng chờ 1 chút nhé😉\n Cửa hàng mình sẽ có người trả lời bạn ngay ạ"
-            };
-            //send a media template
-            let response2 = {
-                "attachment": {
-                    "type": "template",
-                    "payload": {
-                        "template_type": "media",
-                        "template_type": "generic",
-                        "elements": [
-                            {
-                                "title": "La - Bánh và trà",
-                                "subtitle": " ",
-                                "buttons": [
-                                    {
-                                        "type": "postback",
-                                        "title": "ĐỒ UỐNG",
-                                        "payload": "SENDDRINK",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "BÁNH ĂN VẶT",
-                                        "payload": "SENDCAKE",
-                                    },
-                                    {
-                                        "type": "postback",
-                                        "title": "BÁNH SINH NHẬT",
-                                        "payload": "BIRTHDAYCAKE",
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                }
-            };
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response1);
-            await sendTypingOn(sender_psid);
-            await sendMessage(sender_psid, response2);
-            resolve("done");
-        } catch (e) {
-            reject(e);
-        }
-    });
-};
-
 module.exports = {
     getFacebookUsername: getFacebookUsername,
     sendResponseWelcomeNewCustomer: sendResponseWelcomeNewCustomer,
